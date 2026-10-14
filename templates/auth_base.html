@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a111d"><title>{% block title %}Sign in{% endblock %} · CyberPrior</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/cyberprior-mark.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cyberprior.css') }}">
+</head>
+<body class="auth-body">
+  <header class="auth-top"><a class="brand" href="{{ url_for('contact') }}"><span class="brand-symbol">C</span><span class="brand-copy"><strong>CyberPrior</strong><small>THREAT RISK PLATFORM</small></span></a><a href="{{ url_for('contact') }}">Contact</a></header>
+  <main class="auth-layout"><section class="auth-story"><div class="eyebrow">THREAT-INFORMED VULNERABILITY PRIORITIZATION</div><h1>Make vulnerability risk easier to understand.</h1><p>Explore the project analysis, record asset context, and keep your working entries together in one local workspace.</p><div class="auth-points"><span>01 <b>Understand risk in context</b></span><span>02 <b>Keep track of your entries</b></span><span>03 <b>Explore the project evaluation</b></span></div></section><section class="auth-card">{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="flash-stack">{% for category, message in messages %}<div class="flash-message {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}{% block auth_content %}{% endblock %}</section></main>
+  <footer class="auth-footer"><span>CyberPrior · Academic project prototype</span><a href="{{ url_for('contact') }}">Contact the project team</a></footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+instance/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated data
+data/processed/
+!data/processed/
+data/processed/*
+!data/processed/CyberPrior_Enriched_Dataset_v1.csv
+!data/processed/CyberPrior_Risk_Assessed_Dataset_v1.csv
+!data/processed/CyberPrior_Prioritized_Dataset_v1.csv
+data/raw/api_cache/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Vulnerability Prioritizer{% endblock %}
+{% block breadcrumb %}Vulnerability Prioritizer{% endblock %}
+{% block content %}
+<section class="page-content">
+  <div class="page-heading"><div><div class="eyebrow">PROJECT RISK QUEUE</div><h1>What should be fixed first?</h1><p>Find a vulnerability and open its record to see why it has this risk level and suggested rank.</p></div><span class="scope-pill">FINALIZED PROJECT DATA</span></div>
+  <div class="prioritizer-guide"><strong>Resolve rank:</strong> #1 is the first item to address. <strong>Risk level:</strong> how serious the situation is for this asset. Select a row for the detailed evidence and recommendation.</div>
+  <form class="filter-panel" method="get" action="{{ url_for('prioritizer') }}">
+    <label class="filter-search"><span>Find a CVE or asset</span><input type="search" name="search" value="{{ search }}" placeholder="e.g. CVE-2024-3400 or VPN Gateway"></label>
+    <label><span>Risk level</span><select name="risk"><option value="">All levels</option>{% for value in ['Critical','High','Moderate','Low'] %}<option value="{{ value }}" {{ 'selected' if risk == value else '' }}>{{ value }}</option>{% endfor %}</select></label>
+    <label><span>Internet access</span><select name="exposure"><option value="">All networks</option><option value="External" {{ 'selected' if exposure == 'External' else '' }}>Reachable from outside</option><option value="Internal" {{ 'selected' if exposure == 'Internal' else '' }}>Internal network</option></select></label>
+    <label><span>Asset importance</span><select name="criticality"><option value="">All levels</option>{% for value in ['Critical','High','Medium','Low'] %}<option value="{{ value }}" {{ 'selected' if criticality == value else '' }}>{{ value }}</option>{% endfor %}</select></label>
+    <label><span>Known exploitation (CISA KEV)</span><select name="kev"><option value="">All records</option><option value="yes" {{ 'selected' if kev == 'yes' else '' }}>Listed as exploited</option><option value="no" {{ 'selected' if kev == 'no' else '' }}>Not listed</option></select></label>
+    <label><span>Order records by</span><select name="sort"><option value="priority_rank" {{ 'selected' if sort == 'priority_rank' else '' }}>Suggested fix order</option><option value="priority_score" {{ 'selected' if sort == 'priority_score' else '' }}>Priority score</option><option value="residual_risk_score" {{ 'selected' if sort == 'residual_risk_score' else '' }}>Risk score</option><option value="nvd_cvss_score" {{ 'selected' if sort == 'nvd_cvss_score' else '' }}>CVSS severity</option><option value="epss_score" {{ 'selected' if sort == 'epss_score' else '' }}>EPSS likelihood</option></select></label>
+    <button class="button button-primary filter-submit" type="submit">Apply filters</button>
+    <a class="button button-quiet filter-reset" href="{{ url_for('prioritizer') }}">Clear</a>
+  </form>
+  <div class="results-summary"><strong>{{ "{:,}".format(total_matches) }}</strong> matching records <span>·</span> Page {{ page }} of {{ pages }} <span>·</span> {{ page_size }} per page</div>
+  <section class="panel table-panel">
+    {% if rows %}<div class="table-scroll"><table class="data-table simple-priority-table"><thead><tr><th>Resolve order</th><th>Vulnerability (CVE)</th><th>Affected asset</th><th>Risk level</th><th>Risk score</th><th>Priority score</th><th>Suggested next step</th></tr></thead><tbody>
+    {% for row in rows %}<tr class="clickable-row" data-label="{{ row.cve_id }} on {{ row.asset }}" data-href="{{ url_for('vulnerability_detail', asset_id=row.asset_id) }}">
+      <td class="rank-cell"><strong>#{{ row.priority_rank|int }}</strong></td><td><a class="cve-link" href="{{ url_for('vulnerability_detail', asset_id=row.asset_id) }}">{{ row.cve_id }}</a></td><td>{{ row.asset }}<small class="cell-sub">Scenario {{ row.asset_id }}</small></td>
+      <td><span class="risk-badge {{ row.residual_risk_level|lower }}">{{ row.residual_risk_level }}</span></td><td>{{ "%.2f"|format(row.residual_risk_score|float) }} / 100</td><td class="score-cell">{{ "%.2f"|format(row.priority_score|float) }} / 100</td><td class="action-cell">{{ row.recommended_action }}</td>
+    </tr>{% endfor %}
+    </tbody></table></div>{% else %}<div class="empty-state"><div class="empty-icon">⌕</div><h2>No records match these filters</h2><p>Try a broader CVE or asset search, or clear one of the filters.</p><a class="button button-quiet" href="{{ url_for('prioritizer') }}">Clear filters</a></div>{% endif %}
+  </section>
+  {% if pages > 1 %}<nav class="pagination" aria-label="Results pages">{% if page > 1 %}<a class="button button-quiet" href="{{ url_for('prioritizer', search=search, risk=risk, exposure=exposure, criticality=criticality, kev=kev, sort=sort, page=page-1) }}">← Previous</a>{% else %}<span class="button button-quiet disabled">← Previous</span>{% endif %}<span>Page {{ page }} / {{ pages }}</span>{% if page < pages %}<a class="button button-quiet" href="{{ url_for('prioritizer', search=search, risk=risk, exposure=exposure, criticality=criticality, kev=kev, sort=sort, page=page+1) }}">Next →</a>{% else %}<span class="button button-quiet disabled">Next →</span>{% endif %}</nav>{% endif %}
+</section>
+{% endblock %}

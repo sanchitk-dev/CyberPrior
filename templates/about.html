@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}About CyberPrior{% endblock %}
+{% block breadcrumb %}About CyberPrior{% endblock %}
+{% block content %}
+<section class="page-content about-page">
+  <div class="page-heading"><div><div class="eyebrow">PROJECT OVERVIEW</div><h1>CyberPrior</h1><p>AI-Powered Threat-Informed Vulnerability Risk Prioritization</p></div><span class="scope-pill">B.TECH MINOR PROJECT</span></div>
+  <section class="about-intro panel"><div class="about-emblem">C</div><div><h2>Severity is not the whole risk picture.</h2><p>CyberPrior combines real vulnerability identifiers and external intelligence with sample asset scenarios. Asset importance, internet access, data sensitivity, and safeguards affect the project’s risk and suggested fix order. The core risk score comes from documented rules; the machine-learning models are evaluated on how well they reproduce those project labels. This prototype does not independently predict real-world attacks.</p></div></section>
+  <div class="objective-grid">
+    <article class="panel objective-card"><div class="objective-number">01</div><div class="status-chip complete">Implemented</div><h2>Automated data enrichment</h2><p>Joins project asset-vulnerability records with NVD vulnerability details, FIRST EPSS exploitation likelihood, and CISA KEV status.</p><div class="tech-tags"><span>NVD</span><span>EPSS</span><span>CISA KEV</span></div></article>
+    <article class="panel objective-card"><div class="objective-number">02</div><div class="status-chip complete">Implemented</div><h2>Risk assessment and prioritization</h2><p>Documented rules calculate risk and rank suggested work. Three machine-learning models are compared against those rule-generated risk labels.</p><div class="tech-tags"><span>Risk rules</span><span>scikit-learn</span><span>Model explanations</span></div></article>
+    <article class="panel objective-card objective-paused"><div class="objective-number">03</div><div class="status-chip paused">Paused · future scope</div><h2>Continuous monitoring</h2><p>Risk history, trend tracking, and alerting are not part of this prototype.</p></article>
+    <article class="panel objective-card objective-paused"><div class="objective-number">04</div><div class="status-chip paused">Paused · future scope</div><h2>Budget-constrained mitigation</h2><p>Mitigation cost and security investment optimization are reserved for later development.</p></article>
+  </div>
+  <section class="panel about-data"><div><div class="eyebrow">CURRENT PROJECT DATA</div><h2>{{ "{:,}".format(records) }} asset-vulnerability records · {{ cves }} CVEs · {{ asset_types }} asset types</h2><p>{{ "{:,}".format(kev_records) }} records are linked to CVEs listed in CISA KEV. CVE intelligence is externally sourced; asset types and organizational context are synthetic project scenarios.</p></div><a class="button button-quiet" href="{{ url_for('dashboard') }}">Return to dashboard →</a></section>
+</section>
+{% endblock %}

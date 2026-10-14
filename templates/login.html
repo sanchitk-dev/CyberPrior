@@ -1,0 +1,7 @@
+{% extends "auth_base.html" %}
+{% block title %}Sign in{% endblock %}
+{% block auth_content %}
+<div class="eyebrow">YOUR CYBERPRIOR WORKSPACE</div><h2>Welcome back</h2><p class="auth-intro">Sign in to continue to your project dashboard and saved entries.</p>
+<form method="post" class="auth-form"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Username<input name="username" autocomplete="username" required autofocus></label><label>Password<input type="password" name="password" autocomplete="current-password" required></label><button class="button button-primary auth-submit" type="submit">Sign in <span aria-hidden="true">→</span></button></form>
+<p class="auth-footnote">This local demo uses the account created during first-time setup. Ask the project owner for access if you don’t have an account.</p>
+{% endblock %}

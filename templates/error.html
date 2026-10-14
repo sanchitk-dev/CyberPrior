@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block title %}{{ code }} · Project data unavailable{% endblock %}
+{% block breadcrumb %}Unavailable{% endblock %}
+{% block content %}<section class="page-content"><div class="empty-state error-state"><div class="error-code">{{ code }}</div><h1>We couldn’t open this view</h1><p>{{ message }}</p><a class="button button-primary" href="{{ url_for('dashboard') }}">Return to dashboard</a></div></section>{% endblock %}

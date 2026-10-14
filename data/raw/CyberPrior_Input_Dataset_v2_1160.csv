@@ -1,0 +1,1161 @@
+asset_id,asset,cve_id,criticality,exposure,data_sensitivity,control_effectiveness
+AST-0001,Web Server,CVE-2024-3400,Low,External,Low,Low
+AST-0002,API Gateway,CVE-2024-3400,Medium,External,Medium,High
+AST-0003,Email Server,CVE-2024-3400,High,External,High,Medium
+AST-0004,VPN Gateway,CVE-2024-3400,Critical,External,Critical,Low
+AST-0005,Firewall,CVE-2024-3400,Low,External,Low,High
+AST-0006,Application Server,CVE-2024-3400,Medium,Internal,Medium,Medium
+AST-0007,Database Server,CVE-2024-3400,High,Internal,High,Low
+AST-0008,File Server,CVE-2024-3400,Critical,Internal,Critical,High
+AST-0009,Domain Controller,CVE-2024-3400,Low,Internal,Low,Medium
+AST-0010,Remote Access Server,CVE-2024-3400,Medium,External,Medium,Low
+AST-0011,Virtualization Host,CVE-2024-3400,High,Internal,High,High
+AST-0012,Backup Server,CVE-2024-3400,Critical,Internal,Critical,Medium
+AST-0013,Monitoring Server,CVE-2024-3400,Low,Internal,Low,Low
+AST-0014,Development Server,CVE-2024-3400,Medium,Internal,Medium,High
+AST-0015,CI/CD Server,CVE-2024-3400,High,External,High,Medium
+AST-0016,Customer Portal,CVE-2024-3400,Critical,External,Critical,Low
+AST-0017,Employee Workstation,CVE-2024-3400,Low,Internal,Low,High
+AST-0018,Finance Server,CVE-2024-3400,Medium,Internal,Medium,Medium
+AST-0019,HR Server,CVE-2024-3400,High,Internal,High,Low
+AST-0020,Legacy Windows Server,CVE-2024-3400,Critical,Internal,Critical,High
+AST-0021,Web Server,CVE-2024-21762,Medium,External,High,Medium
+AST-0022,API Gateway,CVE-2024-21762,High,External,Critical,Low
+AST-0023,Email Server,CVE-2024-21762,Critical,External,Low,High
+AST-0024,VPN Gateway,CVE-2024-21762,Low,External,Medium,Medium
+AST-0025,Firewall,CVE-2024-21762,Medium,External,High,Low
+AST-0026,Application Server,CVE-2024-21762,High,Internal,Critical,High
+AST-0027,Database Server,CVE-2024-21762,Critical,Internal,Low,Medium
+AST-0028,File Server,CVE-2024-21762,Low,Internal,Medium,Low
+AST-0029,Domain Controller,CVE-2024-21762,Medium,Internal,High,High
+AST-0030,Remote Access Server,CVE-2024-21762,High,External,Critical,Medium
+AST-0031,Virtualization Host,CVE-2024-21762,Critical,Internal,Low,Low
+AST-0032,Backup Server,CVE-2024-21762,Low,Internal,Medium,High
+AST-0033,Monitoring Server,CVE-2024-21762,Medium,Internal,High,Medium
+AST-0034,Development Server,CVE-2024-21762,High,Internal,Critical,Low
+AST-0035,CI/CD Server,CVE-2024-21762,Critical,External,Low,High
+AST-0036,Customer Portal,CVE-2024-21762,Low,External,Medium,Medium
+AST-0037,Employee Workstation,CVE-2024-21762,Medium,Internal,High,Low
+AST-0038,Finance Server,CVE-2024-21762,High,Internal,Critical,High
+AST-0039,HR Server,CVE-2024-21762,Critical,Internal,Low,Medium
+AST-0040,Legacy Windows Server,CVE-2024-21762,Low,Internal,Medium,Low
+AST-0041,Web Server,CVE-2024-20353,High,External,Low,High
+AST-0042,API Gateway,CVE-2024-20353,Critical,External,Medium,Medium
+AST-0043,Email Server,CVE-2024-20353,Low,External,High,Low
+AST-0044,VPN Gateway,CVE-2024-20353,Medium,External,Critical,High
+AST-0045,Firewall,CVE-2024-20353,High,External,Low,Medium
+AST-0046,Application Server,CVE-2024-20353,Critical,Internal,Medium,Low
+AST-0047,Database Server,CVE-2024-20353,Low,Internal,High,High
+AST-0048,File Server,CVE-2024-20353,Medium,Internal,Critical,Medium
+AST-0049,Domain Controller,CVE-2024-20353,High,Internal,Low,Low
+AST-0050,Remote Access Server,CVE-2024-20353,Critical,External,Medium,High
+AST-0051,Virtualization Host,CVE-2024-20353,Low,Internal,High,Medium
+AST-0052,Backup Server,CVE-2024-20353,Medium,Internal,Critical,Low
+AST-0053,Monitoring Server,CVE-2024-20353,High,Internal,Low,High
+AST-0054,Development Server,CVE-2024-20353,Critical,Internal,Medium,Medium
+AST-0055,CI/CD Server,CVE-2024-20353,Low,External,High,Low
+AST-0056,Customer Portal,CVE-2024-20353,Medium,External,Critical,High
+AST-0057,Employee Workstation,CVE-2024-20353,High,Internal,Low,Medium
+AST-0058,Finance Server,CVE-2024-20353,Critical,Internal,Medium,Low
+AST-0059,HR Server,CVE-2024-20353,Low,Internal,High,High
+AST-0060,Legacy Windows Server,CVE-2024-20353,Medium,Internal,Critical,Medium
+AST-0061,Web Server,CVE-2024-21887,Critical,External,High,Low
+AST-0062,API Gateway,CVE-2024-21887,Low,External,Critical,High
+AST-0063,Email Server,CVE-2024-21887,Medium,External,Low,Medium
+AST-0064,VPN Gateway,CVE-2024-21887,High,External,Medium,Low
+AST-0065,Firewall,CVE-2024-21887,Critical,External,High,High
+AST-0066,Application Server,CVE-2024-21887,Low,Internal,Critical,Medium
+AST-0067,Database Server,CVE-2024-21887,Medium,Internal,Low,Low
+AST-0068,File Server,CVE-2024-21887,High,Internal,Medium,High
+AST-0069,Domain Controller,CVE-2024-21887,Critical,Internal,High,Medium
+AST-0070,Remote Access Server,CVE-2024-21887,Low,External,Critical,Low
+AST-0071,Virtualization Host,CVE-2024-21887,Medium,Internal,Low,High
+AST-0072,Backup Server,CVE-2024-21887,High,Internal,Medium,Medium
+AST-0073,Monitoring Server,CVE-2024-21887,Critical,Internal,High,Low
+AST-0074,Development Server,CVE-2024-21887,Low,Internal,Critical,High
+AST-0075,CI/CD Server,CVE-2024-21887,Medium,External,Low,Medium
+AST-0076,Customer Portal,CVE-2024-21887,High,External,Medium,Low
+AST-0077,Employee Workstation,CVE-2024-21887,Critical,Internal,High,High
+AST-0078,Finance Server,CVE-2024-21887,Low,Internal,Critical,Medium
+AST-0079,HR Server,CVE-2024-21887,Medium,Internal,Low,Low
+AST-0080,Legacy Windows Server,CVE-2024-21887,High,Internal,Medium,High
+AST-0081,Web Server,CVE-2023-20198,Low,External,Low,Medium
+AST-0082,API Gateway,CVE-2023-20198,Medium,External,Medium,Low
+AST-0083,Email Server,CVE-2023-20198,High,External,High,High
+AST-0084,VPN Gateway,CVE-2023-20198,Critical,External,Critical,Medium
+AST-0085,Firewall,CVE-2023-20198,Low,External,Low,Low
+AST-0086,Application Server,CVE-2023-20198,Medium,Internal,Medium,High
+AST-0087,Database Server,CVE-2023-20198,High,Internal,High,Medium
+AST-0088,File Server,CVE-2023-20198,Critical,Internal,Critical,Low
+AST-0089,Domain Controller,CVE-2023-20198,Low,Internal,Low,High
+AST-0090,Remote Access Server,CVE-2023-20198,Medium,External,Medium,Medium
+AST-0091,Virtualization Host,CVE-2023-20198,High,Internal,High,Low
+AST-0092,Backup Server,CVE-2023-20198,Critical,Internal,Critical,High
+AST-0093,Monitoring Server,CVE-2023-20198,Low,Internal,Low,Medium
+AST-0094,Development Server,CVE-2023-20198,Medium,Internal,Medium,Low
+AST-0095,CI/CD Server,CVE-2023-20198,High,External,High,High
+AST-0096,Customer Portal,CVE-2023-20198,Critical,External,Critical,Medium
+AST-0097,Employee Workstation,CVE-2023-20198,Low,Internal,Low,Low
+AST-0098,Finance Server,CVE-2023-20198,Medium,Internal,Medium,High
+AST-0099,HR Server,CVE-2023-20198,High,Internal,High,Medium
+AST-0100,Legacy Windows Server,CVE-2023-20198,Critical,Internal,Critical,Low
+AST-0101,Web Server,CVE-2023-29357,Medium,External,High,High
+AST-0102,API Gateway,CVE-2023-29357,High,External,Critical,Medium
+AST-0103,Email Server,CVE-2023-29357,Critical,External,Low,Low
+AST-0104,VPN Gateway,CVE-2023-29357,Low,External,Medium,High
+AST-0105,Firewall,CVE-2023-29357,Medium,External,High,Medium
+AST-0106,Application Server,CVE-2023-29357,High,Internal,Critical,Low
+AST-0107,Database Server,CVE-2023-29357,Critical,Internal,Low,High
+AST-0108,File Server,CVE-2023-29357,Low,Internal,Medium,Medium
+AST-0109,Domain Controller,CVE-2023-29357,Medium,Internal,High,Low
+AST-0110,Remote Access Server,CVE-2023-29357,High,External,Critical,High
+AST-0111,Virtualization Host,CVE-2023-29357,Critical,Internal,Low,Medium
+AST-0112,Backup Server,CVE-2023-29357,Low,Internal,Medium,Low
+AST-0113,Monitoring Server,CVE-2023-29357,Medium,Internal,High,High
+AST-0114,Development Server,CVE-2023-29357,High,Internal,Critical,Medium
+AST-0115,CI/CD Server,CVE-2023-29357,Critical,External,Low,Low
+AST-0116,Customer Portal,CVE-2023-29357,Low,External,Medium,High
+AST-0117,Employee Workstation,CVE-2023-29357,Medium,Internal,High,Medium
+AST-0118,Finance Server,CVE-2023-29357,High,Internal,Critical,Low
+AST-0119,HR Server,CVE-2023-29357,Critical,Internal,Low,High
+AST-0120,Legacy Windows Server,CVE-2023-29357,Low,Internal,Medium,Medium
+AST-0121,Web Server,CVE-2023-34362,High,External,Low,Low
+AST-0122,API Gateway,CVE-2023-34362,Critical,External,Medium,High
+AST-0123,Email Server,CVE-2023-34362,Low,External,High,Medium
+AST-0124,VPN Gateway,CVE-2023-34362,Medium,External,Critical,Low
+AST-0125,Firewall,CVE-2023-34362,High,External,Low,High
+AST-0126,Application Server,CVE-2023-34362,Critical,Internal,Medium,Medium
+AST-0127,Database Server,CVE-2023-34362,Low,Internal,High,Low
+AST-0128,File Server,CVE-2023-34362,Medium,Internal,Critical,High
+AST-0129,Domain Controller,CVE-2023-34362,High,Internal,Low,Medium
+AST-0130,Remote Access Server,CVE-2023-34362,Critical,External,Medium,Low
+AST-0131,Virtualization Host,CVE-2023-34362,Low,Internal,High,High
+AST-0132,Backup Server,CVE-2023-34362,Medium,Internal,Critical,Medium
+AST-0133,Monitoring Server,CVE-2023-34362,High,Internal,Low,Low
+AST-0134,Development Server,CVE-2023-34362,Critical,Internal,Medium,High
+AST-0135,CI/CD Server,CVE-2023-34362,Low,External,High,Medium
+AST-0136,Customer Portal,CVE-2023-34362,Medium,External,Critical,Low
+AST-0137,Employee Workstation,CVE-2023-34362,High,Internal,Low,High
+AST-0138,Finance Server,CVE-2023-34362,Critical,Internal,Medium,Medium
+AST-0139,HR Server,CVE-2023-34362,Low,Internal,High,Low
+AST-0140,Legacy Windows Server,CVE-2023-34362,Medium,Internal,Critical,High
+AST-0141,Web Server,CVE-2023-35036,Critical,External,High,Medium
+AST-0142,API Gateway,CVE-2023-35036,Low,External,Critical,Low
+AST-0143,Email Server,CVE-2023-35036,Medium,External,Low,High
+AST-0144,VPN Gateway,CVE-2023-35036,High,External,Medium,Medium
+AST-0145,Firewall,CVE-2023-35036,Critical,External,High,Low
+AST-0146,Application Server,CVE-2023-35036,Low,Internal,Critical,High
+AST-0147,Database Server,CVE-2023-35036,Medium,Internal,Low,Medium
+AST-0148,File Server,CVE-2023-35036,High,Internal,Medium,Low
+AST-0149,Domain Controller,CVE-2023-35036,Critical,Internal,High,High
+AST-0150,Remote Access Server,CVE-2023-35036,Low,External,Critical,Medium
+AST-0151,Virtualization Host,CVE-2023-35036,Medium,Internal,Low,Low
+AST-0152,Backup Server,CVE-2023-35036,High,Internal,Medium,High
+AST-0153,Monitoring Server,CVE-2023-35036,Critical,Internal,High,Medium
+AST-0154,Development Server,CVE-2023-35036,Low,Internal,Critical,Low
+AST-0155,CI/CD Server,CVE-2023-35036,Medium,External,Low,High
+AST-0156,Customer Portal,CVE-2023-35036,High,External,Medium,Medium
+AST-0157,Employee Workstation,CVE-2023-35036,Critical,Internal,High,Low
+AST-0158,Finance Server,CVE-2023-35036,Low,Internal,Critical,High
+AST-0159,HR Server,CVE-2023-35036,Medium,Internal,Low,Medium
+AST-0160,Legacy Windows Server,CVE-2023-35036,High,Internal,Medium,Low
+AST-0161,Web Server,CVE-2023-23397,Low,External,Low,High
+AST-0162,API Gateway,CVE-2023-23397,Medium,External,Medium,Medium
+AST-0163,Email Server,CVE-2023-23397,High,External,High,Low
+AST-0164,VPN Gateway,CVE-2023-23397,Critical,External,Critical,High
+AST-0165,Firewall,CVE-2023-23397,Low,External,Low,Medium
+AST-0166,Application Server,CVE-2023-23397,Medium,Internal,Medium,Low
+AST-0167,Database Server,CVE-2023-23397,High,Internal,High,High
+AST-0168,File Server,CVE-2023-23397,Critical,Internal,Critical,Medium
+AST-0169,Domain Controller,CVE-2023-23397,Low,Internal,Low,Low
+AST-0170,Remote Access Server,CVE-2023-23397,Medium,External,Medium,High
+AST-0171,Virtualization Host,CVE-2023-23397,High,Internal,High,Medium
+AST-0172,Backup Server,CVE-2023-23397,Critical,Internal,Critical,Low
+AST-0173,Monitoring Server,CVE-2023-23397,Low,Internal,Low,High
+AST-0174,Development Server,CVE-2023-23397,Medium,Internal,Medium,Medium
+AST-0175,CI/CD Server,CVE-2023-23397,High,External,High,Low
+AST-0176,Customer Portal,CVE-2023-23397,Critical,External,Critical,High
+AST-0177,Employee Workstation,CVE-2023-23397,Low,Internal,Low,Medium
+AST-0178,Finance Server,CVE-2023-23397,Medium,Internal,Medium,Low
+AST-0179,HR Server,CVE-2023-23397,High,Internal,High,High
+AST-0180,Legacy Windows Server,CVE-2023-23397,Critical,Internal,Critical,Medium
+AST-0181,Web Server,CVE-2023-27997,Medium,External,High,Low
+AST-0182,API Gateway,CVE-2023-27997,High,External,Critical,High
+AST-0183,Email Server,CVE-2023-27997,Critical,External,Low,Medium
+AST-0184,VPN Gateway,CVE-2023-27997,Low,External,Medium,Low
+AST-0185,Firewall,CVE-2023-27997,Medium,External,High,High
+AST-0186,Application Server,CVE-2023-27997,High,Internal,Critical,Medium
+AST-0187,Database Server,CVE-2023-27997,Critical,Internal,Low,Low
+AST-0188,File Server,CVE-2023-27997,Low,Internal,Medium,High
+AST-0189,Domain Controller,CVE-2023-27997,Medium,Internal,High,Medium
+AST-0190,Remote Access Server,CVE-2023-27997,High,External,Critical,Low
+AST-0191,Virtualization Host,CVE-2023-27997,Critical,Internal,Low,High
+AST-0192,Backup Server,CVE-2023-27997,Low,Internal,Medium,Medium
+AST-0193,Monitoring Server,CVE-2023-27997,Medium,Internal,High,Low
+AST-0194,Development Server,CVE-2023-27997,High,Internal,Critical,High
+AST-0195,CI/CD Server,CVE-2023-27997,Critical,External,Low,Medium
+AST-0196,Customer Portal,CVE-2023-27997,Low,External,Medium,Low
+AST-0197,Employee Workstation,CVE-2023-27997,Medium,Internal,High,High
+AST-0198,Finance Server,CVE-2023-27997,High,Internal,Critical,Medium
+AST-0199,HR Server,CVE-2023-27997,Critical,Internal,Low,Low
+AST-0200,Legacy Windows Server,CVE-2023-27997,Low,Internal,Medium,High
+AST-0201,Web Server,CVE-2023-20887,High,External,Low,Medium
+AST-0202,API Gateway,CVE-2023-20887,Critical,External,Medium,Low
+AST-0203,Email Server,CVE-2023-20887,Low,External,High,High
+AST-0204,VPN Gateway,CVE-2023-20887,Medium,External,Critical,Medium
+AST-0205,Firewall,CVE-2023-20887,High,External,Low,Low
+AST-0206,Application Server,CVE-2023-20887,Critical,Internal,Medium,High
+AST-0207,Database Server,CVE-2023-20887,Low,Internal,High,Medium
+AST-0208,File Server,CVE-2023-20887,Medium,Internal,Critical,Low
+AST-0209,Domain Controller,CVE-2023-20887,High,Internal,Low,High
+AST-0210,Remote Access Server,CVE-2023-20887,Critical,External,Medium,Medium
+AST-0211,Virtualization Host,CVE-2023-20887,Low,Internal,High,Low
+AST-0212,Backup Server,CVE-2023-20887,Medium,Internal,Critical,High
+AST-0213,Monitoring Server,CVE-2023-20887,High,Internal,Low,Medium
+AST-0214,Development Server,CVE-2023-20887,Critical,Internal,Medium,Low
+AST-0215,CI/CD Server,CVE-2023-20887,Low,External,High,High
+AST-0216,Customer Portal,CVE-2023-20887,Medium,External,Critical,Medium
+AST-0217,Employee Workstation,CVE-2023-20887,High,Internal,Low,Low
+AST-0218,Finance Server,CVE-2023-20887,Critical,Internal,Medium,High
+AST-0219,HR Server,CVE-2023-20887,Low,Internal,High,Medium
+AST-0220,Legacy Windows Server,CVE-2023-20887,Medium,Internal,Critical,Low
+AST-0221,Web Server,CVE-2023-35082,Critical,External,High,High
+AST-0222,API Gateway,CVE-2023-35082,Low,External,Critical,Medium
+AST-0223,Email Server,CVE-2023-35082,Medium,External,Low,Low
+AST-0224,VPN Gateway,CVE-2023-35082,High,External,Medium,High
+AST-0225,Firewall,CVE-2023-35082,Critical,External,High,Medium
+AST-0226,Application Server,CVE-2023-35082,Low,Internal,Critical,Low
+AST-0227,Database Server,CVE-2023-35082,Medium,Internal,Low,High
+AST-0228,File Server,CVE-2023-35082,High,Internal,Medium,Medium
+AST-0229,Domain Controller,CVE-2023-35082,Critical,Internal,High,Low
+AST-0230,Remote Access Server,CVE-2023-35082,Low,External,Critical,High
+AST-0231,Virtualization Host,CVE-2023-35082,Medium,Internal,Low,Medium
+AST-0232,Backup Server,CVE-2023-35082,High,Internal,Medium,Low
+AST-0233,Monitoring Server,CVE-2023-35082,Critical,Internal,High,High
+AST-0234,Development Server,CVE-2023-35082,Low,Internal,Critical,Medium
+AST-0235,CI/CD Server,CVE-2023-35082,Medium,External,Low,Low
+AST-0236,Customer Portal,CVE-2023-35082,High,External,Medium,High
+AST-0237,Employee Workstation,CVE-2023-35082,Critical,Internal,High,Medium
+AST-0238,Finance Server,CVE-2023-35082,Low,Internal,Critical,Low
+AST-0239,HR Server,CVE-2023-35082,Medium,Internal,Low,High
+AST-0240,Legacy Windows Server,CVE-2023-35082,High,Internal,Medium,Medium
+AST-0241,Web Server,CVE-2023-46747,Low,External,Low,Low
+AST-0242,API Gateway,CVE-2023-46747,Medium,External,Medium,High
+AST-0243,Email Server,CVE-2023-46747,High,External,High,Medium
+AST-0244,VPN Gateway,CVE-2023-46747,Critical,External,Critical,Low
+AST-0245,Firewall,CVE-2023-46747,Low,External,Low,High
+AST-0246,Application Server,CVE-2023-46747,Medium,Internal,Medium,Medium
+AST-0247,Database Server,CVE-2023-46747,High,Internal,High,Low
+AST-0248,File Server,CVE-2023-46747,Critical,Internal,Critical,High
+AST-0249,Domain Controller,CVE-2023-46747,Low,Internal,Low,Medium
+AST-0250,Remote Access Server,CVE-2023-46747,Medium,External,Medium,Low
+AST-0251,Virtualization Host,CVE-2023-46747,High,Internal,High,High
+AST-0252,Backup Server,CVE-2023-46747,Critical,Internal,Critical,Medium
+AST-0253,Monitoring Server,CVE-2023-46747,Low,Internal,Low,Low
+AST-0254,Development Server,CVE-2023-46747,Medium,Internal,Medium,High
+AST-0255,CI/CD Server,CVE-2023-46747,High,External,High,Medium
+AST-0256,Customer Portal,CVE-2023-46747,Critical,External,Critical,Low
+AST-0257,Employee Workstation,CVE-2023-46747,Low,Internal,Low,High
+AST-0258,Finance Server,CVE-2023-46747,Medium,Internal,Medium,Medium
+AST-0259,HR Server,CVE-2023-46747,High,Internal,High,Low
+AST-0260,Legacy Windows Server,CVE-2023-46747,Critical,Internal,Critical,High
+AST-0261,Web Server,CVE-2022-30190,Medium,External,High,Medium
+AST-0262,API Gateway,CVE-2022-30190,High,External,Critical,Low
+AST-0263,Email Server,CVE-2022-30190,Critical,External,Low,High
+AST-0264,VPN Gateway,CVE-2022-30190,Low,External,Medium,Medium
+AST-0265,Firewall,CVE-2022-30190,Medium,External,High,Low
+AST-0266,Application Server,CVE-2022-30190,High,Internal,Critical,High
+AST-0267,Database Server,CVE-2022-30190,Critical,Internal,Low,Medium
+AST-0268,File Server,CVE-2022-30190,Low,Internal,Medium,Low
+AST-0269,Domain Controller,CVE-2022-30190,Medium,Internal,High,High
+AST-0270,Remote Access Server,CVE-2022-30190,High,External,Critical,Medium
+AST-0271,Virtualization Host,CVE-2022-30190,Critical,Internal,Low,Low
+AST-0272,Backup Server,CVE-2022-30190,Low,Internal,Medium,High
+AST-0273,Monitoring Server,CVE-2022-30190,Medium,Internal,High,Medium
+AST-0274,Development Server,CVE-2022-30190,High,Internal,Critical,Low
+AST-0275,CI/CD Server,CVE-2022-30190,Critical,External,Low,High
+AST-0276,Customer Portal,CVE-2022-30190,Low,External,Medium,Medium
+AST-0277,Employee Workstation,CVE-2022-30190,Medium,Internal,High,Low
+AST-0278,Finance Server,CVE-2022-30190,High,Internal,Critical,High
+AST-0279,HR Server,CVE-2022-30190,Critical,Internal,Low,Medium
+AST-0280,Legacy Windows Server,CVE-2022-30190,Low,Internal,Medium,Low
+AST-0281,Web Server,CVE-2022-26134,High,External,Low,High
+AST-0282,API Gateway,CVE-2022-26134,Critical,External,Medium,Medium
+AST-0283,Email Server,CVE-2022-26134,Low,External,High,Low
+AST-0284,VPN Gateway,CVE-2022-26134,Medium,External,Critical,High
+AST-0285,Firewall,CVE-2022-26134,High,External,Low,Medium
+AST-0286,Application Server,CVE-2022-26134,Critical,Internal,Medium,Low
+AST-0287,Database Server,CVE-2022-26134,Low,Internal,High,High
+AST-0288,File Server,CVE-2022-26134,Medium,Internal,Critical,Medium
+AST-0289,Domain Controller,CVE-2022-26134,High,Internal,Low,Low
+AST-0290,Remote Access Server,CVE-2022-26134,Critical,External,Medium,High
+AST-0291,Virtualization Host,CVE-2022-26134,Low,Internal,High,Medium
+AST-0292,Backup Server,CVE-2022-26134,Medium,Internal,Critical,Low
+AST-0293,Monitoring Server,CVE-2022-26134,High,Internal,Low,High
+AST-0294,Development Server,CVE-2022-26134,Critical,Internal,Medium,Medium
+AST-0295,CI/CD Server,CVE-2022-26134,Low,External,High,Low
+AST-0296,Customer Portal,CVE-2022-26134,Medium,External,Critical,High
+AST-0297,Employee Workstation,CVE-2022-26134,High,Internal,Low,Medium
+AST-0298,Finance Server,CVE-2022-26134,Critical,Internal,Medium,Low
+AST-0299,HR Server,CVE-2022-26134,Low,Internal,High,High
+AST-0300,Legacy Windows Server,CVE-2022-26134,Medium,Internal,Critical,Medium
+AST-0301,Web Server,CVE-2022-26143,Critical,External,High,Low
+AST-0302,API Gateway,CVE-2022-26143,Low,External,Critical,High
+AST-0303,Email Server,CVE-2022-26143,Medium,External,Low,Medium
+AST-0304,VPN Gateway,CVE-2022-26143,High,External,Medium,Low
+AST-0305,Firewall,CVE-2022-26143,Critical,External,High,High
+AST-0306,Application Server,CVE-2022-26143,Low,Internal,Critical,Medium
+AST-0307,Database Server,CVE-2022-26143,Medium,Internal,Low,Low
+AST-0308,File Server,CVE-2022-26143,High,Internal,Medium,High
+AST-0309,Domain Controller,CVE-2022-26143,Critical,Internal,High,Medium
+AST-0310,Remote Access Server,CVE-2022-26143,Low,External,Critical,Low
+AST-0311,Virtualization Host,CVE-2022-26143,Medium,Internal,Low,High
+AST-0312,Backup Server,CVE-2022-26143,High,Internal,Medium,Medium
+AST-0313,Monitoring Server,CVE-2022-26143,Critical,Internal,High,Low
+AST-0314,Development Server,CVE-2022-26143,Low,Internal,Critical,High
+AST-0315,CI/CD Server,CVE-2022-26143,Medium,External,Low,Medium
+AST-0316,Customer Portal,CVE-2022-26143,High,External,Medium,Low
+AST-0317,Employee Workstation,CVE-2022-26143,Critical,Internal,High,High
+AST-0318,Finance Server,CVE-2022-26143,Low,Internal,Critical,Medium
+AST-0319,HR Server,CVE-2022-26143,Medium,Internal,Low,Low
+AST-0320,Legacy Windows Server,CVE-2022-26143,High,Internal,Medium,High
+AST-0321,Web Server,CVE-2022-1388,Low,External,Low,Medium
+AST-0322,API Gateway,CVE-2022-1388,Medium,External,Medium,Low
+AST-0323,Email Server,CVE-2022-1388,High,External,High,High
+AST-0324,VPN Gateway,CVE-2022-1388,Critical,External,Critical,Medium
+AST-0325,Firewall,CVE-2022-1388,Low,External,Low,Low
+AST-0326,Application Server,CVE-2022-1388,Medium,Internal,Medium,High
+AST-0327,Database Server,CVE-2022-1388,High,Internal,High,Medium
+AST-0328,File Server,CVE-2022-1388,Critical,Internal,Critical,Low
+AST-0329,Domain Controller,CVE-2022-1388,Low,Internal,Low,High
+AST-0330,Remote Access Server,CVE-2022-1388,Medium,External,Medium,Medium
+AST-0331,Virtualization Host,CVE-2022-1388,High,Internal,High,Low
+AST-0332,Backup Server,CVE-2022-1388,Critical,Internal,Critical,High
+AST-0333,Monitoring Server,CVE-2022-1388,Low,Internal,Low,Medium
+AST-0334,Development Server,CVE-2022-1388,Medium,Internal,Medium,Low
+AST-0335,CI/CD Server,CVE-2022-1388,High,External,High,High
+AST-0336,Customer Portal,CVE-2022-1388,Critical,External,Critical,Medium
+AST-0337,Employee Workstation,CVE-2022-1388,Low,Internal,Low,Low
+AST-0338,Finance Server,CVE-2022-1388,Medium,Internal,Medium,High
+AST-0339,HR Server,CVE-2022-1388,High,Internal,High,Medium
+AST-0340,Legacy Windows Server,CVE-2022-1388,Critical,Internal,Critical,Low
+AST-0341,Web Server,CVE-2022-22965,Medium,External,High,High
+AST-0342,API Gateway,CVE-2022-22965,High,External,Critical,Medium
+AST-0343,Email Server,CVE-2022-22965,Critical,External,Low,Low
+AST-0344,VPN Gateway,CVE-2022-22965,Low,External,Medium,High
+AST-0345,Firewall,CVE-2022-22965,Medium,External,High,Medium
+AST-0346,Application Server,CVE-2022-22965,High,Internal,Critical,Low
+AST-0347,Database Server,CVE-2022-22965,Critical,Internal,Low,High
+AST-0348,File Server,CVE-2022-22965,Low,Internal,Medium,Medium
+AST-0349,Domain Controller,CVE-2022-22965,Medium,Internal,High,Low
+AST-0350,Remote Access Server,CVE-2022-22965,High,External,Critical,High
+AST-0351,Virtualization Host,CVE-2022-22965,Critical,Internal,Low,Medium
+AST-0352,Backup Server,CVE-2022-22965,Low,Internal,Medium,Low
+AST-0353,Monitoring Server,CVE-2022-22965,Medium,Internal,High,High
+AST-0354,Development Server,CVE-2022-22965,High,Internal,Critical,Medium
+AST-0355,CI/CD Server,CVE-2022-22965,Critical,External,Low,Low
+AST-0356,Customer Portal,CVE-2022-22965,Low,External,Medium,High
+AST-0357,Employee Workstation,CVE-2022-22965,Medium,Internal,High,Medium
+AST-0358,Finance Server,CVE-2022-22965,High,Internal,Critical,Low
+AST-0359,HR Server,CVE-2022-22965,Critical,Internal,Low,High
+AST-0360,Legacy Windows Server,CVE-2022-22965,Low,Internal,Medium,Medium
+AST-0361,Web Server,CVE-2022-22963,High,External,Low,Low
+AST-0362,API Gateway,CVE-2022-22963,Critical,External,Medium,High
+AST-0363,Email Server,CVE-2022-22963,Low,External,High,Medium
+AST-0364,VPN Gateway,CVE-2022-22963,Medium,External,Critical,Low
+AST-0365,Firewall,CVE-2022-22963,High,External,Low,High
+AST-0366,Application Server,CVE-2022-22963,Critical,Internal,Medium,Medium
+AST-0367,Database Server,CVE-2022-22963,Low,Internal,High,Low
+AST-0368,File Server,CVE-2022-22963,Medium,Internal,Critical,High
+AST-0369,Domain Controller,CVE-2022-22963,High,Internal,Low,Medium
+AST-0370,Remote Access Server,CVE-2022-22963,Critical,External,Medium,Low
+AST-0371,Virtualization Host,CVE-2022-22963,Low,Internal,High,High
+AST-0372,Backup Server,CVE-2022-22963,Medium,Internal,Critical,Medium
+AST-0373,Monitoring Server,CVE-2022-22963,High,Internal,Low,Low
+AST-0374,Development Server,CVE-2022-22963,Critical,Internal,Medium,High
+AST-0375,CI/CD Server,CVE-2022-22963,Low,External,High,Medium
+AST-0376,Customer Portal,CVE-2022-22963,Medium,External,Critical,Low
+AST-0377,Employee Workstation,CVE-2022-22963,High,Internal,Low,High
+AST-0378,Finance Server,CVE-2022-22963,Critical,Internal,Medium,Medium
+AST-0379,HR Server,CVE-2022-22963,Low,Internal,High,Low
+AST-0380,Legacy Windows Server,CVE-2022-22963,Medium,Internal,Critical,High
+AST-0381,Web Server,CVE-2021-44228,Critical,External,High,Medium
+AST-0382,API Gateway,CVE-2021-44228,Low,External,Critical,Low
+AST-0383,Email Server,CVE-2021-44228,Medium,External,Low,High
+AST-0384,VPN Gateway,CVE-2021-44228,High,External,Medium,Medium
+AST-0385,Firewall,CVE-2021-44228,Critical,External,High,Low
+AST-0386,Application Server,CVE-2021-44228,Low,Internal,Critical,High
+AST-0387,Database Server,CVE-2021-44228,Medium,Internal,Low,Medium
+AST-0388,File Server,CVE-2021-44228,High,Internal,Medium,Low
+AST-0389,Domain Controller,CVE-2021-44228,Critical,Internal,High,High
+AST-0390,Remote Access Server,CVE-2021-44228,Low,External,Critical,Medium
+AST-0391,Virtualization Host,CVE-2021-44228,Medium,Internal,Low,Low
+AST-0392,Backup Server,CVE-2021-44228,High,Internal,Medium,High
+AST-0393,Monitoring Server,CVE-2021-44228,Critical,Internal,High,Medium
+AST-0394,Development Server,CVE-2021-44228,Low,Internal,Critical,Low
+AST-0395,CI/CD Server,CVE-2021-44228,Medium,External,Low,High
+AST-0396,Customer Portal,CVE-2021-44228,High,External,Medium,Medium
+AST-0397,Employee Workstation,CVE-2021-44228,Critical,Internal,High,Low
+AST-0398,Finance Server,CVE-2021-44228,Low,Internal,Critical,High
+AST-0399,HR Server,CVE-2021-44228,Medium,Internal,Low,Medium
+AST-0400,Legacy Windows Server,CVE-2021-44228,High,Internal,Medium,Low
+AST-0401,Web Server,CVE-2021-45046,Low,External,Low,High
+AST-0402,API Gateway,CVE-2021-45046,Medium,External,Medium,Medium
+AST-0403,Email Server,CVE-2021-45046,High,External,High,Low
+AST-0404,VPN Gateway,CVE-2021-45046,Critical,External,Critical,High
+AST-0405,Firewall,CVE-2021-45046,Low,External,Low,Medium
+AST-0406,Application Server,CVE-2021-45046,Medium,Internal,Medium,Low
+AST-0407,Database Server,CVE-2021-45046,High,Internal,High,High
+AST-0408,File Server,CVE-2021-45046,Critical,Internal,Critical,Medium
+AST-0409,Domain Controller,CVE-2021-45046,Low,Internal,Low,Low
+AST-0410,Remote Access Server,CVE-2021-45046,Medium,External,Medium,High
+AST-0411,Virtualization Host,CVE-2021-45046,High,Internal,High,Medium
+AST-0412,Backup Server,CVE-2021-45046,Critical,Internal,Critical,Low
+AST-0413,Monitoring Server,CVE-2021-45046,Low,Internal,Low,High
+AST-0414,Development Server,CVE-2021-45046,Medium,Internal,Medium,Medium
+AST-0415,CI/CD Server,CVE-2021-45046,High,External,High,Low
+AST-0416,Customer Portal,CVE-2021-45046,Critical,External,Critical,High
+AST-0417,Employee Workstation,CVE-2021-45046,Low,Internal,Low,Medium
+AST-0418,Finance Server,CVE-2021-45046,Medium,Internal,Medium,Low
+AST-0419,HR Server,CVE-2021-45046,High,Internal,High,High
+AST-0420,Legacy Windows Server,CVE-2021-45046,Critical,Internal,Critical,Medium
+AST-0421,Web Server,CVE-2021-26855,Medium,External,High,Low
+AST-0422,API Gateway,CVE-2021-26855,High,External,Critical,High
+AST-0423,Email Server,CVE-2021-26855,Critical,External,Low,Medium
+AST-0424,VPN Gateway,CVE-2021-26855,Low,External,Medium,Low
+AST-0425,Firewall,CVE-2021-26855,Medium,External,High,High
+AST-0426,Application Server,CVE-2021-26855,High,Internal,Critical,Medium
+AST-0427,Database Server,CVE-2021-26855,Critical,Internal,Low,Low
+AST-0428,File Server,CVE-2021-26855,Low,Internal,Medium,High
+AST-0429,Domain Controller,CVE-2021-26855,Medium,Internal,High,Medium
+AST-0430,Remote Access Server,CVE-2021-26855,High,External,Critical,Low
+AST-0431,Virtualization Host,CVE-2021-26855,Critical,Internal,Low,High
+AST-0432,Backup Server,CVE-2021-26855,Low,Internal,Medium,Medium
+AST-0433,Monitoring Server,CVE-2021-26855,Medium,Internal,High,Low
+AST-0434,Development Server,CVE-2021-26855,High,Internal,Critical,High
+AST-0435,CI/CD Server,CVE-2021-26855,Critical,External,Low,Medium
+AST-0436,Customer Portal,CVE-2021-26855,Low,External,Medium,Low
+AST-0437,Employee Workstation,CVE-2021-26855,Medium,Internal,High,High
+AST-0438,Finance Server,CVE-2021-26855,High,Internal,Critical,Medium
+AST-0439,HR Server,CVE-2021-26855,Critical,Internal,Low,Low
+AST-0440,Legacy Windows Server,CVE-2021-26855,Low,Internal,Medium,High
+AST-0441,Web Server,CVE-2021-34527,High,External,Low,Medium
+AST-0442,API Gateway,CVE-2021-34527,Critical,External,Medium,Low
+AST-0443,Email Server,CVE-2021-34527,Low,External,High,High
+AST-0444,VPN Gateway,CVE-2021-34527,Medium,External,Critical,Medium
+AST-0445,Firewall,CVE-2021-34527,High,External,Low,Low
+AST-0446,Application Server,CVE-2021-34527,Critical,Internal,Medium,High
+AST-0447,Database Server,CVE-2021-34527,Low,Internal,High,Medium
+AST-0448,File Server,CVE-2021-34527,Medium,Internal,Critical,Low
+AST-0449,Domain Controller,CVE-2021-34527,High,Internal,Low,High
+AST-0450,Remote Access Server,CVE-2021-34527,Critical,External,Medium,Medium
+AST-0451,Virtualization Host,CVE-2021-34527,Low,Internal,High,Low
+AST-0452,Backup Server,CVE-2021-34527,Medium,Internal,Critical,High
+AST-0453,Monitoring Server,CVE-2021-34527,High,Internal,Low,Medium
+AST-0454,Development Server,CVE-2021-34527,Critical,Internal,Medium,Low
+AST-0455,CI/CD Server,CVE-2021-34527,Low,External,High,High
+AST-0456,Customer Portal,CVE-2021-34527,Medium,External,Critical,Medium
+AST-0457,Employee Workstation,CVE-2021-34527,High,Internal,Low,Low
+AST-0458,Finance Server,CVE-2021-34527,Critical,Internal,Medium,High
+AST-0459,HR Server,CVE-2021-34527,Low,Internal,High,Medium
+AST-0460,Legacy Windows Server,CVE-2021-34527,Medium,Internal,Critical,Low
+AST-0461,Web Server,CVE-2021-34473,Critical,External,High,High
+AST-0462,API Gateway,CVE-2021-34473,Low,External,Critical,Medium
+AST-0463,Email Server,CVE-2021-34473,Medium,External,Low,Low
+AST-0464,VPN Gateway,CVE-2021-34473,High,External,Medium,High
+AST-0465,Firewall,CVE-2021-34473,Critical,External,High,Medium
+AST-0466,Application Server,CVE-2021-34473,Low,Internal,Critical,Low
+AST-0467,Database Server,CVE-2021-34473,Medium,Internal,Low,High
+AST-0468,File Server,CVE-2021-34473,High,Internal,Medium,Medium
+AST-0469,Domain Controller,CVE-2021-34473,Critical,Internal,High,Low
+AST-0470,Remote Access Server,CVE-2021-34473,Low,External,Critical,High
+AST-0471,Virtualization Host,CVE-2021-34473,Medium,Internal,Low,Medium
+AST-0472,Backup Server,CVE-2021-34473,High,Internal,Medium,Low
+AST-0473,Monitoring Server,CVE-2021-34473,Critical,Internal,High,High
+AST-0474,Development Server,CVE-2021-34473,Low,Internal,Critical,Medium
+AST-0475,CI/CD Server,CVE-2021-34473,Medium,External,Low,Low
+AST-0476,Customer Portal,CVE-2021-34473,High,External,Medium,High
+AST-0477,Employee Workstation,CVE-2021-34473,Critical,Internal,High,Medium
+AST-0478,Finance Server,CVE-2021-34473,Low,Internal,Critical,Low
+AST-0479,HR Server,CVE-2021-34473,Medium,Internal,Low,High
+AST-0480,Legacy Windows Server,CVE-2021-34473,High,Internal,Medium,Medium
+AST-0481,Web Server,CVE-2021-36942,Low,External,Low,Low
+AST-0482,API Gateway,CVE-2021-36942,Medium,External,Medium,High
+AST-0483,Email Server,CVE-2021-36942,High,External,High,Medium
+AST-0484,VPN Gateway,CVE-2021-36942,Critical,External,Critical,Low
+AST-0485,Firewall,CVE-2021-36942,Low,External,Low,High
+AST-0486,Application Server,CVE-2021-36942,Medium,Internal,Medium,Medium
+AST-0487,Database Server,CVE-2021-36942,High,Internal,High,Low
+AST-0488,File Server,CVE-2021-36942,Critical,Internal,Critical,High
+AST-0489,Domain Controller,CVE-2021-36942,Low,Internal,Low,Medium
+AST-0490,Remote Access Server,CVE-2021-36942,Medium,External,Medium,Low
+AST-0491,Virtualization Host,CVE-2021-36942,High,Internal,High,High
+AST-0492,Backup Server,CVE-2021-36942,Critical,Internal,Critical,Medium
+AST-0493,Monitoring Server,CVE-2021-36942,Low,Internal,Low,Low
+AST-0494,Development Server,CVE-2021-36942,Medium,Internal,Medium,High
+AST-0495,CI/CD Server,CVE-2021-36942,High,External,High,Medium
+AST-0496,Customer Portal,CVE-2021-36942,Critical,External,Critical,Low
+AST-0497,Employee Workstation,CVE-2021-36942,Low,Internal,Low,High
+AST-0498,Finance Server,CVE-2021-36942,Medium,Internal,Medium,Medium
+AST-0499,HR Server,CVE-2021-36942,High,Internal,High,Low
+AST-0500,Legacy Windows Server,CVE-2021-36942,Critical,Internal,Critical,High
+AST-0501,Web Server,CVE-2021-41773,Medium,External,High,Medium
+AST-0502,API Gateway,CVE-2021-41773,High,External,Critical,Low
+AST-0503,Email Server,CVE-2021-41773,Critical,External,Low,High
+AST-0504,VPN Gateway,CVE-2021-41773,Low,External,Medium,Medium
+AST-0505,Firewall,CVE-2021-41773,Medium,External,High,Low
+AST-0506,Application Server,CVE-2021-41773,High,Internal,Critical,High
+AST-0507,Database Server,CVE-2021-41773,Critical,Internal,Low,Medium
+AST-0508,File Server,CVE-2021-41773,Low,Internal,Medium,Low
+AST-0509,Domain Controller,CVE-2021-41773,Medium,Internal,High,High
+AST-0510,Remote Access Server,CVE-2021-41773,High,External,Critical,Medium
+AST-0511,Virtualization Host,CVE-2021-41773,Critical,Internal,Low,Low
+AST-0512,Backup Server,CVE-2021-41773,Low,Internal,Medium,High
+AST-0513,Monitoring Server,CVE-2021-41773,Medium,Internal,High,Medium
+AST-0514,Development Server,CVE-2021-41773,High,Internal,Critical,Low
+AST-0515,CI/CD Server,CVE-2021-41773,Critical,External,Low,High
+AST-0516,Customer Portal,CVE-2021-41773,Low,External,Medium,Medium
+AST-0517,Employee Workstation,CVE-2021-41773,Medium,Internal,High,Low
+AST-0518,Finance Server,CVE-2021-41773,High,Internal,Critical,High
+AST-0519,HR Server,CVE-2021-41773,Critical,Internal,Low,Medium
+AST-0520,Legacy Windows Server,CVE-2021-41773,Low,Internal,Medium,Low
+AST-0521,Web Server,CVE-2021-42013,High,External,Low,High
+AST-0522,API Gateway,CVE-2021-42013,Critical,External,Medium,Medium
+AST-0523,Email Server,CVE-2021-42013,Low,External,High,Low
+AST-0524,VPN Gateway,CVE-2021-42013,Medium,External,Critical,High
+AST-0525,Firewall,CVE-2021-42013,High,External,Low,Medium
+AST-0526,Application Server,CVE-2021-42013,Critical,Internal,Medium,Low
+AST-0527,Database Server,CVE-2021-42013,Low,Internal,High,High
+AST-0528,File Server,CVE-2021-42013,Medium,Internal,Critical,Medium
+AST-0529,Domain Controller,CVE-2021-42013,High,Internal,Low,Low
+AST-0530,Remote Access Server,CVE-2021-42013,Critical,External,Medium,High
+AST-0531,Virtualization Host,CVE-2021-42013,Low,Internal,High,Medium
+AST-0532,Backup Server,CVE-2021-42013,Medium,Internal,Critical,Low
+AST-0533,Monitoring Server,CVE-2021-42013,High,Internal,Low,High
+AST-0534,Development Server,CVE-2021-42013,Critical,Internal,Medium,Medium
+AST-0535,CI/CD Server,CVE-2021-42013,Low,External,High,Low
+AST-0536,Customer Portal,CVE-2021-42013,Medium,External,Critical,High
+AST-0537,Employee Workstation,CVE-2021-42013,High,Internal,Low,Medium
+AST-0538,Finance Server,CVE-2021-42013,Critical,Internal,Medium,Low
+AST-0539,HR Server,CVE-2021-42013,Low,Internal,High,High
+AST-0540,Legacy Windows Server,CVE-2021-42013,Medium,Internal,Critical,Medium
+AST-0541,Web Server,CVE-2021-26084,Critical,External,High,Low
+AST-0542,API Gateway,CVE-2021-26084,Low,External,Critical,High
+AST-0543,Email Server,CVE-2021-26084,Medium,External,Low,Medium
+AST-0544,VPN Gateway,CVE-2021-26084,High,External,Medium,Low
+AST-0545,Firewall,CVE-2021-26084,Critical,External,High,High
+AST-0546,Application Server,CVE-2021-26084,Low,Internal,Critical,Medium
+AST-0547,Database Server,CVE-2021-26084,Medium,Internal,Low,Low
+AST-0548,File Server,CVE-2021-26084,High,Internal,Medium,High
+AST-0549,Domain Controller,CVE-2021-26084,Critical,Internal,High,Medium
+AST-0550,Remote Access Server,CVE-2021-26084,Low,External,Critical,Low
+AST-0551,Virtualization Host,CVE-2021-26084,Medium,Internal,Low,High
+AST-0552,Backup Server,CVE-2021-26084,High,Internal,Medium,Medium
+AST-0553,Monitoring Server,CVE-2021-26084,Critical,Internal,High,Low
+AST-0554,Development Server,CVE-2021-26084,Low,Internal,Critical,High
+AST-0555,CI/CD Server,CVE-2021-26084,Medium,External,Low,Medium
+AST-0556,Customer Portal,CVE-2021-26084,High,External,Medium,Low
+AST-0557,Employee Workstation,CVE-2021-26084,Critical,Internal,High,High
+AST-0558,Finance Server,CVE-2021-26084,Low,Internal,Critical,Medium
+AST-0559,HR Server,CVE-2021-26084,Medium,Internal,Low,Low
+AST-0560,Legacy Windows Server,CVE-2021-26084,High,Internal,Medium,High
+AST-0561,Web Server,CVE-2021-22005,Low,External,Low,Medium
+AST-0562,API Gateway,CVE-2021-22005,Medium,External,Medium,Low
+AST-0563,Email Server,CVE-2021-22005,High,External,High,High
+AST-0564,VPN Gateway,CVE-2021-22005,Critical,External,Critical,Medium
+AST-0565,Firewall,CVE-2021-22005,Low,External,Low,Low
+AST-0566,Application Server,CVE-2021-22005,Medium,Internal,Medium,High
+AST-0567,Database Server,CVE-2021-22005,High,Internal,High,Medium
+AST-0568,File Server,CVE-2021-22005,Critical,Internal,Critical,Low
+AST-0569,Domain Controller,CVE-2021-22005,Low,Internal,Low,High
+AST-0570,Remote Access Server,CVE-2021-22005,Medium,External,Medium,Medium
+AST-0571,Virtualization Host,CVE-2021-22005,High,Internal,High,Low
+AST-0572,Backup Server,CVE-2021-22005,Critical,Internal,Critical,High
+AST-0573,Monitoring Server,CVE-2021-22005,Low,Internal,Low,Medium
+AST-0574,Development Server,CVE-2021-22005,Medium,Internal,Medium,Low
+AST-0575,CI/CD Server,CVE-2021-22005,High,External,High,High
+AST-0576,Customer Portal,CVE-2021-22005,Critical,External,Critical,Medium
+AST-0577,Employee Workstation,CVE-2021-22005,Low,Internal,Low,Low
+AST-0578,Finance Server,CVE-2021-22005,Medium,Internal,Medium,High
+AST-0579,HR Server,CVE-2021-22005,High,Internal,High,Medium
+AST-0580,Legacy Windows Server,CVE-2021-22005,Critical,Internal,Critical,Low
+AST-0581,Web Server,CVE-2020-1472,Medium,External,High,High
+AST-0582,API Gateway,CVE-2020-1472,High,External,Critical,Medium
+AST-0583,Email Server,CVE-2020-1472,Critical,External,Low,Low
+AST-0584,VPN Gateway,CVE-2020-1472,Low,External,Medium,High
+AST-0585,Firewall,CVE-2020-1472,Medium,External,High,Medium
+AST-0586,Application Server,CVE-2020-1472,High,Internal,Critical,Low
+AST-0587,Database Server,CVE-2020-1472,Critical,Internal,Low,High
+AST-0588,File Server,CVE-2020-1472,Low,Internal,Medium,Medium
+AST-0589,Domain Controller,CVE-2020-1472,Medium,Internal,High,Low
+AST-0590,Remote Access Server,CVE-2020-1472,High,External,Critical,High
+AST-0591,Virtualization Host,CVE-2020-1472,Critical,Internal,Low,Medium
+AST-0592,Backup Server,CVE-2020-1472,Low,Internal,Medium,Low
+AST-0593,Monitoring Server,CVE-2020-1472,Medium,Internal,High,High
+AST-0594,Development Server,CVE-2020-1472,High,Internal,Critical,Medium
+AST-0595,CI/CD Server,CVE-2020-1472,Critical,External,Low,Low
+AST-0596,Customer Portal,CVE-2020-1472,Low,External,Medium,High
+AST-0597,Employee Workstation,CVE-2020-1472,Medium,Internal,High,Medium
+AST-0598,Finance Server,CVE-2020-1472,High,Internal,Critical,Low
+AST-0599,HR Server,CVE-2020-1472,Critical,Internal,Low,High
+AST-0600,Legacy Windows Server,CVE-2020-1472,Low,Internal,Medium,Medium
+AST-0601,Web Server,CVE-2020-5902,High,External,Low,Low
+AST-0602,API Gateway,CVE-2020-5902,Critical,External,Medium,High
+AST-0603,Email Server,CVE-2020-5902,Low,External,High,Medium
+AST-0604,VPN Gateway,CVE-2020-5902,Medium,External,Critical,Low
+AST-0605,Firewall,CVE-2020-5902,High,External,Low,High
+AST-0606,Application Server,CVE-2020-5902,Critical,Internal,Medium,Medium
+AST-0607,Database Server,CVE-2020-5902,Low,Internal,High,Low
+AST-0608,File Server,CVE-2020-5902,Medium,Internal,Critical,High
+AST-0609,Domain Controller,CVE-2020-5902,High,Internal,Low,Medium
+AST-0610,Remote Access Server,CVE-2020-5902,Critical,External,Medium,Low
+AST-0611,Virtualization Host,CVE-2020-5902,Low,Internal,High,High
+AST-0612,Backup Server,CVE-2020-5902,Medium,Internal,Critical,Medium
+AST-0613,Monitoring Server,CVE-2020-5902,High,Internal,Low,Low
+AST-0614,Development Server,CVE-2020-5902,Critical,Internal,Medium,High
+AST-0615,CI/CD Server,CVE-2020-5902,Low,External,High,Medium
+AST-0616,Customer Portal,CVE-2020-5902,Medium,External,Critical,Low
+AST-0617,Employee Workstation,CVE-2020-5902,High,Internal,Low,High
+AST-0618,Finance Server,CVE-2020-5902,Critical,Internal,Medium,Medium
+AST-0619,HR Server,CVE-2020-5902,Low,Internal,High,Low
+AST-0620,Legacy Windows Server,CVE-2020-5902,Medium,Internal,Critical,High
+AST-0621,Web Server,CVE-2020-1938,Critical,External,High,Medium
+AST-0622,API Gateway,CVE-2020-1938,Low,External,Critical,Low
+AST-0623,Email Server,CVE-2020-1938,Medium,External,Low,High
+AST-0624,VPN Gateway,CVE-2020-1938,High,External,Medium,Medium
+AST-0625,Firewall,CVE-2020-1938,Critical,External,High,Low
+AST-0626,Application Server,CVE-2020-1938,Low,Internal,Critical,High
+AST-0627,Database Server,CVE-2020-1938,Medium,Internal,Low,Medium
+AST-0628,File Server,CVE-2020-1938,High,Internal,Medium,Low
+AST-0629,Domain Controller,CVE-2020-1938,Critical,Internal,High,High
+AST-0630,Remote Access Server,CVE-2020-1938,Low,External,Critical,Medium
+AST-0631,Virtualization Host,CVE-2020-1938,Medium,Internal,Low,Low
+AST-0632,Backup Server,CVE-2020-1938,High,Internal,Medium,High
+AST-0633,Monitoring Server,CVE-2020-1938,Critical,Internal,High,Medium
+AST-0634,Development Server,CVE-2020-1938,Low,Internal,Critical,Low
+AST-0635,CI/CD Server,CVE-2020-1938,Medium,External,Low,High
+AST-0636,Customer Portal,CVE-2020-1938,High,External,Medium,Medium
+AST-0637,Employee Workstation,CVE-2020-1938,Critical,Internal,High,Low
+AST-0638,Finance Server,CVE-2020-1938,Low,Internal,Critical,High
+AST-0639,HR Server,CVE-2020-1938,Medium,Internal,Low,Medium
+AST-0640,Legacy Windows Server,CVE-2020-1938,High,Internal,Medium,Low
+AST-0641,Web Server,CVE-2020-9484,Low,External,Low,High
+AST-0642,API Gateway,CVE-2020-9484,Medium,External,Medium,Medium
+AST-0643,Email Server,CVE-2020-9484,High,External,High,Low
+AST-0644,VPN Gateway,CVE-2020-9484,Critical,External,Critical,High
+AST-0645,Firewall,CVE-2020-9484,Low,External,Low,Medium
+AST-0646,Application Server,CVE-2020-9484,Medium,Internal,Medium,Low
+AST-0647,Database Server,CVE-2020-9484,High,Internal,High,High
+AST-0648,File Server,CVE-2020-9484,Critical,Internal,Critical,Medium
+AST-0649,Domain Controller,CVE-2020-9484,Low,Internal,Low,Low
+AST-0650,Remote Access Server,CVE-2020-9484,Medium,External,Medium,High
+AST-0651,Virtualization Host,CVE-2020-9484,High,Internal,High,Medium
+AST-0652,Backup Server,CVE-2020-9484,Critical,Internal,Critical,Low
+AST-0653,Monitoring Server,CVE-2020-9484,Low,Internal,Low,High
+AST-0654,Development Server,CVE-2020-9484,Medium,Internal,Medium,Medium
+AST-0655,CI/CD Server,CVE-2020-9484,High,External,High,Low
+AST-0656,Customer Portal,CVE-2020-9484,Critical,External,Critical,High
+AST-0657,Employee Workstation,CVE-2020-9484,Low,Internal,Low,Medium
+AST-0658,Finance Server,CVE-2020-9484,Medium,Internal,Medium,Low
+AST-0659,HR Server,CVE-2020-9484,High,Internal,High,High
+AST-0660,Legacy Windows Server,CVE-2020-9484,Critical,Internal,Critical,Medium
+AST-0661,Web Server,CVE-2020-10148,Medium,External,High,Low
+AST-0662,API Gateway,CVE-2020-10148,High,External,Critical,High
+AST-0663,Email Server,CVE-2020-10148,Critical,External,Low,Medium
+AST-0664,VPN Gateway,CVE-2020-10148,Low,External,Medium,Low
+AST-0665,Firewall,CVE-2020-10148,Medium,External,High,High
+AST-0666,Application Server,CVE-2020-10148,High,Internal,Critical,Medium
+AST-0667,Database Server,CVE-2020-10148,Critical,Internal,Low,Low
+AST-0668,File Server,CVE-2020-10148,Low,Internal,Medium,High
+AST-0669,Domain Controller,CVE-2020-10148,Medium,Internal,High,Medium
+AST-0670,Remote Access Server,CVE-2020-10148,High,External,Critical,Low
+AST-0671,Virtualization Host,CVE-2020-10148,Critical,Internal,Low,High
+AST-0672,Backup Server,CVE-2020-10148,Low,Internal,Medium,Medium
+AST-0673,Monitoring Server,CVE-2020-10148,Medium,Internal,High,Low
+AST-0674,Development Server,CVE-2020-10148,High,Internal,Critical,High
+AST-0675,CI/CD Server,CVE-2020-10148,Critical,External,Low,Medium
+AST-0676,Customer Portal,CVE-2020-10148,Low,External,Medium,Low
+AST-0677,Employee Workstation,CVE-2020-10148,Medium,Internal,High,High
+AST-0678,Finance Server,CVE-2020-10148,High,Internal,Critical,Medium
+AST-0679,HR Server,CVE-2020-10148,Critical,Internal,Low,Low
+AST-0680,Legacy Windows Server,CVE-2020-10148,Low,Internal,Medium,High
+AST-0681,Web Server,CVE-2019-0708,High,External,Low,Medium
+AST-0682,API Gateway,CVE-2019-0708,Critical,External,Medium,Low
+AST-0683,Email Server,CVE-2019-0708,Low,External,High,High
+AST-0684,VPN Gateway,CVE-2019-0708,Medium,External,Critical,Medium
+AST-0685,Firewall,CVE-2019-0708,High,External,Low,Low
+AST-0686,Application Server,CVE-2019-0708,Critical,Internal,Medium,High
+AST-0687,Database Server,CVE-2019-0708,Low,Internal,High,Medium
+AST-0688,File Server,CVE-2019-0708,Medium,Internal,Critical,Low
+AST-0689,Domain Controller,CVE-2019-0708,High,Internal,Low,High
+AST-0690,Remote Access Server,CVE-2019-0708,Critical,External,Medium,Medium
+AST-0691,Virtualization Host,CVE-2019-0708,Low,Internal,High,Low
+AST-0692,Backup Server,CVE-2019-0708,Medium,Internal,Critical,High
+AST-0693,Monitoring Server,CVE-2019-0708,High,Internal,Low,Medium
+AST-0694,Development Server,CVE-2019-0708,Critical,Internal,Medium,Low
+AST-0695,CI/CD Server,CVE-2019-0708,Low,External,High,High
+AST-0696,Customer Portal,CVE-2019-0708,Medium,External,Critical,Medium
+AST-0697,Employee Workstation,CVE-2019-0708,High,Internal,Low,Low
+AST-0698,Finance Server,CVE-2019-0708,Critical,Internal,Medium,High
+AST-0699,HR Server,CVE-2019-0708,Low,Internal,High,Medium
+AST-0700,Legacy Windows Server,CVE-2019-0708,Medium,Internal,Critical,Low
+AST-0701,Web Server,CVE-2019-11510,Critical,External,High,High
+AST-0702,API Gateway,CVE-2019-11510,Low,External,Critical,Medium
+AST-0703,Email Server,CVE-2019-11510,Medium,External,Low,Low
+AST-0704,VPN Gateway,CVE-2019-11510,High,External,Medium,High
+AST-0705,Firewall,CVE-2019-11510,Critical,External,High,Medium
+AST-0706,Application Server,CVE-2019-11510,Low,Internal,Critical,Low
+AST-0707,Database Server,CVE-2019-11510,Medium,Internal,Low,High
+AST-0708,File Server,CVE-2019-11510,High,Internal,Medium,Medium
+AST-0709,Domain Controller,CVE-2019-11510,Critical,Internal,High,Low
+AST-0710,Remote Access Server,CVE-2019-11510,Low,External,Critical,High
+AST-0711,Virtualization Host,CVE-2019-11510,Medium,Internal,Low,Medium
+AST-0712,Backup Server,CVE-2019-11510,High,Internal,Medium,Low
+AST-0713,Monitoring Server,CVE-2019-11510,Critical,Internal,High,High
+AST-0714,Development Server,CVE-2019-11510,Low,Internal,Critical,Medium
+AST-0715,CI/CD Server,CVE-2019-11510,Medium,External,Low,Low
+AST-0716,Customer Portal,CVE-2019-11510,High,External,Medium,High
+AST-0717,Employee Workstation,CVE-2019-11510,Critical,Internal,High,Medium
+AST-0718,Finance Server,CVE-2019-11510,Low,Internal,Critical,Low
+AST-0719,HR Server,CVE-2019-11510,Medium,Internal,Low,High
+AST-0720,Legacy Windows Server,CVE-2019-11510,High,Internal,Medium,Medium
+AST-0721,Web Server,CVE-2019-19781,Low,External,Low,Low
+AST-0722,API Gateway,CVE-2019-19781,Medium,External,Medium,High
+AST-0723,Email Server,CVE-2019-19781,High,External,High,Medium
+AST-0724,VPN Gateway,CVE-2019-19781,Critical,External,Critical,Low
+AST-0725,Firewall,CVE-2019-19781,Low,External,Low,High
+AST-0726,Application Server,CVE-2019-19781,Medium,Internal,Medium,Medium
+AST-0727,Database Server,CVE-2019-19781,High,Internal,High,Low
+AST-0728,File Server,CVE-2019-19781,Critical,Internal,Critical,High
+AST-0729,Domain Controller,CVE-2019-19781,Low,Internal,Low,Medium
+AST-0730,Remote Access Server,CVE-2019-19781,Medium,External,Medium,Low
+AST-0731,Virtualization Host,CVE-2019-19781,High,Internal,High,High
+AST-0732,Backup Server,CVE-2019-19781,Critical,Internal,Critical,Medium
+AST-0733,Monitoring Server,CVE-2019-19781,Low,Internal,Low,Low
+AST-0734,Development Server,CVE-2019-19781,Medium,Internal,Medium,High
+AST-0735,CI/CD Server,CVE-2019-19781,High,External,High,Medium
+AST-0736,Customer Portal,CVE-2019-19781,Critical,External,Critical,Low
+AST-0737,Employee Workstation,CVE-2019-19781,Low,Internal,Low,High
+AST-0738,Finance Server,CVE-2019-19781,Medium,Internal,Medium,Medium
+AST-0739,HR Server,CVE-2019-19781,High,Internal,High,Low
+AST-0740,Legacy Windows Server,CVE-2019-19781,Critical,Internal,Critical,High
+AST-0741,Web Server,CVE-2018-13379,Medium,External,High,Medium
+AST-0742,API Gateway,CVE-2018-13379,High,External,Critical,Low
+AST-0743,Email Server,CVE-2018-13379,Critical,External,Low,High
+AST-0744,VPN Gateway,CVE-2018-13379,Low,External,Medium,Medium
+AST-0745,Firewall,CVE-2018-13379,Medium,External,High,Low
+AST-0746,Application Server,CVE-2018-13379,High,Internal,Critical,High
+AST-0747,Database Server,CVE-2018-13379,Critical,Internal,Low,Medium
+AST-0748,File Server,CVE-2018-13379,Low,Internal,Medium,Low
+AST-0749,Domain Controller,CVE-2018-13379,Medium,Internal,High,High
+AST-0750,Remote Access Server,CVE-2018-13379,High,External,Critical,Medium
+AST-0751,Virtualization Host,CVE-2018-13379,Critical,Internal,Low,Low
+AST-0752,Backup Server,CVE-2018-13379,Low,Internal,Medium,High
+AST-0753,Monitoring Server,CVE-2018-13379,Medium,Internal,High,Medium
+AST-0754,Development Server,CVE-2018-13379,High,Internal,Critical,Low
+AST-0755,CI/CD Server,CVE-2018-13379,Critical,External,Low,High
+AST-0756,Customer Portal,CVE-2018-13379,Low,External,Medium,Medium
+AST-0757,Employee Workstation,CVE-2018-13379,Medium,Internal,High,Low
+AST-0758,Finance Server,CVE-2018-13379,High,Internal,Critical,High
+AST-0759,HR Server,CVE-2018-13379,Critical,Internal,Low,Medium
+AST-0760,Legacy Windows Server,CVE-2018-13379,Low,Internal,Medium,Low
+AST-0761,Web Server,CVE-2018-7600,High,External,Low,High
+AST-0762,API Gateway,CVE-2018-7600,Critical,External,Medium,Medium
+AST-0763,Email Server,CVE-2018-7600,Low,External,High,Low
+AST-0764,VPN Gateway,CVE-2018-7600,Medium,External,Critical,High
+AST-0765,Firewall,CVE-2018-7600,High,External,Low,Medium
+AST-0766,Application Server,CVE-2018-7600,Critical,Internal,Medium,Low
+AST-0767,Database Server,CVE-2018-7600,Low,Internal,High,High
+AST-0768,File Server,CVE-2018-7600,Medium,Internal,Critical,Medium
+AST-0769,Domain Controller,CVE-2018-7600,High,Internal,Low,Low
+AST-0770,Remote Access Server,CVE-2018-7600,Critical,External,Medium,High
+AST-0771,Virtualization Host,CVE-2018-7600,Low,Internal,High,Medium
+AST-0772,Backup Server,CVE-2018-7600,Medium,Internal,Critical,Low
+AST-0773,Monitoring Server,CVE-2018-7600,High,Internal,Low,High
+AST-0774,Development Server,CVE-2018-7600,Critical,Internal,Medium,Medium
+AST-0775,CI/CD Server,CVE-2018-7600,Low,External,High,Low
+AST-0776,Customer Portal,CVE-2018-7600,Medium,External,Critical,High
+AST-0777,Employee Workstation,CVE-2018-7600,High,Internal,Low,Medium
+AST-0778,Finance Server,CVE-2018-7600,Critical,Internal,Medium,Low
+AST-0779,HR Server,CVE-2018-7600,Low,Internal,High,High
+AST-0780,Legacy Windows Server,CVE-2018-7600,Medium,Internal,Critical,Medium
+AST-0781,Web Server,CVE-2017-0144,Critical,External,High,Low
+AST-0782,API Gateway,CVE-2017-0144,Low,External,Critical,High
+AST-0783,Email Server,CVE-2017-0144,Medium,External,Low,Medium
+AST-0784,VPN Gateway,CVE-2017-0144,High,External,Medium,Low
+AST-0785,Firewall,CVE-2017-0144,Critical,External,High,High
+AST-0786,Application Server,CVE-2017-0144,Low,Internal,Critical,Medium
+AST-0787,Database Server,CVE-2017-0144,Medium,Internal,Low,Low
+AST-0788,File Server,CVE-2017-0144,High,Internal,Medium,High
+AST-0789,Domain Controller,CVE-2017-0144,Critical,Internal,High,Medium
+AST-0790,Remote Access Server,CVE-2017-0144,Low,External,Critical,Low
+AST-0791,Virtualization Host,CVE-2017-0144,Medium,Internal,Low,High
+AST-0792,Backup Server,CVE-2017-0144,High,Internal,Medium,Medium
+AST-0793,Monitoring Server,CVE-2017-0144,Critical,Internal,High,Low
+AST-0794,Development Server,CVE-2017-0144,Low,Internal,Critical,High
+AST-0795,CI/CD Server,CVE-2017-0144,Medium,External,Low,Medium
+AST-0796,Customer Portal,CVE-2017-0144,High,External,Medium,Low
+AST-0797,Employee Workstation,CVE-2017-0144,Critical,Internal,High,High
+AST-0798,Finance Server,CVE-2017-0144,Low,Internal,Critical,Medium
+AST-0799,HR Server,CVE-2017-0144,Medium,Internal,Low,Low
+AST-0800,Legacy Windows Server,CVE-2017-0144,High,Internal,Medium,High
+AST-0801,Web Server,CVE-2017-5638,Low,External,Low,Medium
+AST-0802,API Gateway,CVE-2017-5638,Medium,External,Medium,Low
+AST-0803,Email Server,CVE-2017-5638,High,External,High,High
+AST-0804,VPN Gateway,CVE-2017-5638,Critical,External,Critical,Medium
+AST-0805,Firewall,CVE-2017-5638,Low,External,Low,Low
+AST-0806,Application Server,CVE-2017-5638,Medium,Internal,Medium,High
+AST-0807,Database Server,CVE-2017-5638,High,Internal,High,Medium
+AST-0808,File Server,CVE-2017-5638,Critical,Internal,Critical,Low
+AST-0809,Domain Controller,CVE-2017-5638,Low,Internal,Low,High
+AST-0810,Remote Access Server,CVE-2017-5638,Medium,External,Medium,Medium
+AST-0811,Virtualization Host,CVE-2017-5638,High,Internal,High,Low
+AST-0812,Backup Server,CVE-2017-5638,Critical,Internal,Critical,High
+AST-0813,Monitoring Server,CVE-2017-5638,Low,Internal,Low,Medium
+AST-0814,Development Server,CVE-2017-5638,Medium,Internal,Medium,Low
+AST-0815,CI/CD Server,CVE-2017-5638,High,External,High,High
+AST-0816,Customer Portal,CVE-2017-5638,Critical,External,Critical,Medium
+AST-0817,Employee Workstation,CVE-2017-5638,Low,Internal,Low,Low
+AST-0818,Finance Server,CVE-2017-5638,Medium,Internal,Medium,High
+AST-0819,HR Server,CVE-2017-5638,High,Internal,High,Medium
+AST-0820,Legacy Windows Server,CVE-2017-5638,Critical,Internal,Critical,Low
+AST-0821,Web Server,CVE-2017-10271,Medium,External,High,High
+AST-0822,API Gateway,CVE-2017-10271,High,External,Critical,Medium
+AST-0823,Email Server,CVE-2017-10271,Critical,External,Low,Low
+AST-0824,VPN Gateway,CVE-2017-10271,Low,External,Medium,High
+AST-0825,Firewall,CVE-2017-10271,Medium,External,High,Medium
+AST-0826,Application Server,CVE-2017-10271,High,Internal,Critical,Low
+AST-0827,Database Server,CVE-2017-10271,Critical,Internal,Low,High
+AST-0828,File Server,CVE-2017-10271,Low,Internal,Medium,Medium
+AST-0829,Domain Controller,CVE-2017-10271,Medium,Internal,High,Low
+AST-0830,Remote Access Server,CVE-2017-10271,High,External,Critical,High
+AST-0831,Virtualization Host,CVE-2017-10271,Critical,Internal,Low,Medium
+AST-0832,Backup Server,CVE-2017-10271,Low,Internal,Medium,Low
+AST-0833,Monitoring Server,CVE-2017-10271,Medium,Internal,High,High
+AST-0834,Development Server,CVE-2017-10271,High,Internal,Critical,Medium
+AST-0835,CI/CD Server,CVE-2017-10271,Critical,External,Low,Low
+AST-0836,Customer Portal,CVE-2017-10271,Low,External,Medium,High
+AST-0837,Employee Workstation,CVE-2017-10271,Medium,Internal,High,Medium
+AST-0838,Finance Server,CVE-2017-10271,High,Internal,Critical,Low
+AST-0839,HR Server,CVE-2017-10271,Critical,Internal,Low,High
+AST-0840,Legacy Windows Server,CVE-2017-10271,Low,Internal,Medium,Medium
+AST-0841,Web Server,CVE-2016-5195,High,External,Low,Low
+AST-0842,API Gateway,CVE-2016-5195,Critical,External,Medium,High
+AST-0843,Email Server,CVE-2016-5195,Low,External,High,Medium
+AST-0844,VPN Gateway,CVE-2016-5195,Medium,External,Critical,Low
+AST-0845,Firewall,CVE-2016-5195,High,External,Low,High
+AST-0846,Application Server,CVE-2016-5195,Critical,Internal,Medium,Medium
+AST-0847,Database Server,CVE-2016-5195,Low,Internal,High,Low
+AST-0848,File Server,CVE-2016-5195,Medium,Internal,Critical,High
+AST-0849,Domain Controller,CVE-2016-5195,High,Internal,Low,Medium
+AST-0850,Remote Access Server,CVE-2016-5195,Critical,External,Medium,Low
+AST-0851,Virtualization Host,CVE-2016-5195,Low,Internal,High,High
+AST-0852,Backup Server,CVE-2016-5195,Medium,Internal,Critical,Medium
+AST-0853,Monitoring Server,CVE-2016-5195,High,Internal,Low,Low
+AST-0854,Development Server,CVE-2016-5195,Critical,Internal,Medium,High
+AST-0855,CI/CD Server,CVE-2016-5195,Low,External,High,Medium
+AST-0856,Customer Portal,CVE-2016-5195,Medium,External,Critical,Low
+AST-0857,Employee Workstation,CVE-2016-5195,High,Internal,Low,High
+AST-0858,Finance Server,CVE-2016-5195,Critical,Internal,Medium,Medium
+AST-0859,HR Server,CVE-2016-5195,Low,Internal,High,Low
+AST-0860,Legacy Windows Server,CVE-2016-5195,Medium,Internal,Critical,High
+AST-0861,Web Server,CVE-2015-1635,Critical,External,High,Medium
+AST-0862,API Gateway,CVE-2015-1635,Low,External,Critical,Low
+AST-0863,Email Server,CVE-2015-1635,Medium,External,Low,High
+AST-0864,VPN Gateway,CVE-2015-1635,High,External,Medium,Medium
+AST-0865,Firewall,CVE-2015-1635,Critical,External,High,Low
+AST-0866,Application Server,CVE-2015-1635,Low,Internal,Critical,High
+AST-0867,Database Server,CVE-2015-1635,Medium,Internal,Low,Medium
+AST-0868,File Server,CVE-2015-1635,High,Internal,Medium,Low
+AST-0869,Domain Controller,CVE-2015-1635,Critical,Internal,High,High
+AST-0870,Remote Access Server,CVE-2015-1635,Low,External,Critical,Medium
+AST-0871,Virtualization Host,CVE-2015-1635,Medium,Internal,Low,Low
+AST-0872,Backup Server,CVE-2015-1635,High,Internal,Medium,High
+AST-0873,Monitoring Server,CVE-2015-1635,Critical,Internal,High,Medium
+AST-0874,Development Server,CVE-2015-1635,Low,Internal,Critical,Low
+AST-0875,CI/CD Server,CVE-2015-1635,Medium,External,Low,High
+AST-0876,Customer Portal,CVE-2015-1635,High,External,Medium,Medium
+AST-0877,Employee Workstation,CVE-2015-1635,Critical,Internal,High,Low
+AST-0878,Finance Server,CVE-2015-1635,Low,Internal,Critical,High
+AST-0879,HR Server,CVE-2015-1635,Medium,Internal,Low,Medium
+AST-0880,Legacy Windows Server,CVE-2015-1635,High,Internal,Medium,Low
+AST-0881,Web Server,CVE-2014-6271,Low,External,Low,High
+AST-0882,API Gateway,CVE-2014-6271,Medium,External,Medium,Medium
+AST-0883,Email Server,CVE-2014-6271,High,External,High,Low
+AST-0884,VPN Gateway,CVE-2014-6271,Critical,External,Critical,High
+AST-0885,Firewall,CVE-2014-6271,Low,External,Low,Medium
+AST-0886,Application Server,CVE-2014-6271,Medium,Internal,Medium,Low
+AST-0887,Database Server,CVE-2014-6271,High,Internal,High,High
+AST-0888,File Server,CVE-2014-6271,Critical,Internal,Critical,Medium
+AST-0889,Domain Controller,CVE-2014-6271,Low,Internal,Low,Low
+AST-0890,Remote Access Server,CVE-2014-6271,Medium,External,Medium,High
+AST-0891,Virtualization Host,CVE-2014-6271,High,Internal,High,Medium
+AST-0892,Backup Server,CVE-2014-6271,Critical,Internal,Critical,Low
+AST-0893,Monitoring Server,CVE-2014-6271,Low,Internal,Low,High
+AST-0894,Development Server,CVE-2014-6271,Medium,Internal,Medium,Medium
+AST-0895,CI/CD Server,CVE-2014-6271,High,External,High,Low
+AST-0896,Customer Portal,CVE-2014-6271,Critical,External,Critical,High
+AST-0897,Employee Workstation,CVE-2014-6271,Low,Internal,Low,Medium
+AST-0898,Finance Server,CVE-2014-6271,Medium,Internal,Medium,Low
+AST-0899,HR Server,CVE-2014-6271,High,Internal,High,High
+AST-0900,Legacy Windows Server,CVE-2014-6271,Critical,Internal,Critical,Medium
+AST-0901,Web Server,CVE-2014-3566,Medium,External,High,Low
+AST-0902,API Gateway,CVE-2014-3566,High,External,Critical,High
+AST-0903,Email Server,CVE-2014-3566,Critical,External,Low,Medium
+AST-0904,VPN Gateway,CVE-2014-3566,Low,External,Medium,Low
+AST-0905,Firewall,CVE-2014-3566,Medium,External,High,High
+AST-0906,Application Server,CVE-2014-3566,High,Internal,Critical,Medium
+AST-0907,Database Server,CVE-2014-3566,Critical,Internal,Low,Low
+AST-0908,File Server,CVE-2014-3566,Low,Internal,Medium,High
+AST-0909,Domain Controller,CVE-2014-3566,Medium,Internal,High,Medium
+AST-0910,Remote Access Server,CVE-2014-3566,High,External,Critical,Low
+AST-0911,Virtualization Host,CVE-2014-3566,Critical,Internal,Low,High
+AST-0912,Backup Server,CVE-2014-3566,Low,Internal,Medium,Medium
+AST-0913,Monitoring Server,CVE-2014-3566,Medium,Internal,High,Low
+AST-0914,Development Server,CVE-2014-3566,High,Internal,Critical,High
+AST-0915,CI/CD Server,CVE-2014-3566,Critical,External,Low,Medium
+AST-0916,Customer Portal,CVE-2014-3566,Low,External,Medium,Low
+AST-0917,Employee Workstation,CVE-2014-3566,Medium,Internal,High,High
+AST-0918,Finance Server,CVE-2014-3566,High,Internal,Critical,Medium
+AST-0919,HR Server,CVE-2014-3566,Critical,Internal,Low,Low
+AST-0920,Legacy Windows Server,CVE-2014-3566,Low,Internal,Medium,High
+AST-0921,Web Server,CVE-2024-27198,High,External,Low,Medium
+AST-0922,API Gateway,CVE-2024-27198,Critical,External,Medium,Low
+AST-0923,Email Server,CVE-2024-27198,Low,External,High,High
+AST-0924,VPN Gateway,CVE-2024-27198,Medium,External,Critical,Medium
+AST-0925,Firewall,CVE-2024-27198,High,External,Low,Low
+AST-0926,Application Server,CVE-2024-27198,Critical,Internal,Medium,High
+AST-0927,Database Server,CVE-2024-27198,Low,Internal,High,Medium
+AST-0928,File Server,CVE-2024-27198,Medium,Internal,Critical,Low
+AST-0929,Domain Controller,CVE-2024-27198,High,Internal,Low,High
+AST-0930,Remote Access Server,CVE-2024-27198,Critical,External,Medium,Medium
+AST-0931,Virtualization Host,CVE-2024-27198,Low,Internal,High,Low
+AST-0932,Backup Server,CVE-2024-27198,Medium,Internal,Critical,High
+AST-0933,Monitoring Server,CVE-2024-27198,High,Internal,Low,Medium
+AST-0934,Development Server,CVE-2024-27198,Critical,Internal,Medium,Low
+AST-0935,CI/CD Server,CVE-2024-27198,Low,External,High,High
+AST-0936,Customer Portal,CVE-2024-27198,Medium,External,Critical,Medium
+AST-0937,Employee Workstation,CVE-2024-27198,High,Internal,Low,Low
+AST-0938,Finance Server,CVE-2024-27198,Critical,Internal,Medium,High
+AST-0939,HR Server,CVE-2024-27198,Low,Internal,High,Medium
+AST-0940,Legacy Windows Server,CVE-2024-27198,Medium,Internal,Critical,Low
+AST-0941,Web Server,CVE-2024-27199,Critical,External,High,High
+AST-0942,API Gateway,CVE-2024-27199,Low,External,Critical,Medium
+AST-0943,Email Server,CVE-2024-27199,Medium,External,Low,Low
+AST-0944,VPN Gateway,CVE-2024-27199,High,External,Medium,High
+AST-0945,Firewall,CVE-2024-27199,Critical,External,High,Medium
+AST-0946,Application Server,CVE-2024-27199,Low,Internal,Critical,Low
+AST-0947,Database Server,CVE-2024-27199,Medium,Internal,Low,High
+AST-0948,File Server,CVE-2024-27199,High,Internal,Medium,Medium
+AST-0949,Domain Controller,CVE-2024-27199,Critical,Internal,High,Low
+AST-0950,Remote Access Server,CVE-2024-27199,Low,External,Critical,High
+AST-0951,Virtualization Host,CVE-2024-27199,Medium,Internal,Low,Medium
+AST-0952,Backup Server,CVE-2024-27199,High,Internal,Medium,Low
+AST-0953,Monitoring Server,CVE-2024-27199,Critical,Internal,High,High
+AST-0954,Development Server,CVE-2024-27199,Low,Internal,Critical,Medium
+AST-0955,CI/CD Server,CVE-2024-27199,Medium,External,Low,Low
+AST-0956,Customer Portal,CVE-2024-27199,High,External,Medium,High
+AST-0957,Employee Workstation,CVE-2024-27199,Critical,Internal,High,Medium
+AST-0958,Finance Server,CVE-2024-27199,Low,Internal,Critical,Low
+AST-0959,HR Server,CVE-2024-27199,Medium,Internal,Low,High
+AST-0960,Legacy Windows Server,CVE-2024-27199,High,Internal,Medium,Medium
+AST-0961,Web Server,CVE-2024-4577,Low,External,Low,Low
+AST-0962,API Gateway,CVE-2024-4577,Medium,External,Medium,High
+AST-0963,Email Server,CVE-2024-4577,High,External,High,Medium
+AST-0964,VPN Gateway,CVE-2024-4577,Critical,External,Critical,Low
+AST-0965,Firewall,CVE-2024-4577,Low,External,Low,High
+AST-0966,Application Server,CVE-2024-4577,Medium,Internal,Medium,Medium
+AST-0967,Database Server,CVE-2024-4577,High,Internal,High,Low
+AST-0968,File Server,CVE-2024-4577,Critical,Internal,Critical,High
+AST-0969,Domain Controller,CVE-2024-4577,Low,Internal,Low,Medium
+AST-0970,Remote Access Server,CVE-2024-4577,Medium,External,Medium,Low
+AST-0971,Virtualization Host,CVE-2024-4577,High,Internal,High,High
+AST-0972,Backup Server,CVE-2024-4577,Critical,Internal,Critical,Medium
+AST-0973,Monitoring Server,CVE-2024-4577,Low,Internal,Low,Low
+AST-0974,Development Server,CVE-2024-4577,Medium,Internal,Medium,High
+AST-0975,CI/CD Server,CVE-2024-4577,High,External,High,Medium
+AST-0976,Customer Portal,CVE-2024-4577,Critical,External,Critical,Low
+AST-0977,Employee Workstation,CVE-2024-4577,Low,Internal,Low,High
+AST-0978,Finance Server,CVE-2024-4577,Medium,Internal,Medium,Medium
+AST-0979,HR Server,CVE-2024-4577,High,Internal,High,Low
+AST-0980,Legacy Windows Server,CVE-2024-4577,Critical,Internal,Critical,High
+AST-0981,Web Server,CVE-2024-23897,Medium,External,High,Medium
+AST-0982,API Gateway,CVE-2024-23897,High,External,Critical,Low
+AST-0983,Email Server,CVE-2024-23897,Critical,External,Low,High
+AST-0984,VPN Gateway,CVE-2024-23897,Low,External,Medium,Medium
+AST-0985,Firewall,CVE-2024-23897,Medium,External,High,Low
+AST-0986,Application Server,CVE-2024-23897,High,Internal,Critical,High
+AST-0987,Database Server,CVE-2024-23897,Critical,Internal,Low,Medium
+AST-0988,File Server,CVE-2024-23897,Low,Internal,Medium,Low
+AST-0989,Domain Controller,CVE-2024-23897,Medium,Internal,High,High
+AST-0990,Remote Access Server,CVE-2024-23897,High,External,Critical,Medium
+AST-0991,Virtualization Host,CVE-2024-23897,Critical,Internal,Low,Low
+AST-0992,Backup Server,CVE-2024-23897,Low,Internal,Medium,High
+AST-0993,Monitoring Server,CVE-2024-23897,Medium,Internal,High,Medium
+AST-0994,Development Server,CVE-2024-23897,High,Internal,Critical,Low
+AST-0995,CI/CD Server,CVE-2024-23897,Critical,External,Low,High
+AST-0996,Customer Portal,CVE-2024-23897,Low,External,Medium,Medium
+AST-0997,Employee Workstation,CVE-2024-23897,Medium,Internal,High,Low
+AST-0998,Finance Server,CVE-2024-23897,High,Internal,Critical,High
+AST-0999,HR Server,CVE-2024-23897,Critical,Internal,Low,Medium
+AST-1000,Legacy Windows Server,CVE-2024-23897,Low,Internal,Medium,Low
+AST-1001,Web Server,CVE-2023-42793,High,External,Low,High
+AST-1002,API Gateway,CVE-2023-42793,Critical,External,Medium,Medium
+AST-1003,Email Server,CVE-2023-42793,Low,External,High,Low
+AST-1004,VPN Gateway,CVE-2023-42793,Medium,External,Critical,High
+AST-1005,Firewall,CVE-2023-42793,High,External,Low,Medium
+AST-1006,Application Server,CVE-2023-42793,Critical,Internal,Medium,Low
+AST-1007,Database Server,CVE-2023-42793,Low,Internal,High,High
+AST-1008,File Server,CVE-2023-42793,Medium,Internal,Critical,Medium
+AST-1009,Domain Controller,CVE-2023-42793,High,Internal,Low,Low
+AST-1010,Remote Access Server,CVE-2023-42793,Critical,External,Medium,High
+AST-1011,Virtualization Host,CVE-2023-42793,Low,Internal,High,Medium
+AST-1012,Backup Server,CVE-2023-42793,Medium,Internal,Critical,Low
+AST-1013,Monitoring Server,CVE-2023-42793,High,Internal,Low,High
+AST-1014,Development Server,CVE-2023-42793,Critical,Internal,Medium,Medium
+AST-1015,CI/CD Server,CVE-2023-42793,Low,External,High,Low
+AST-1016,Customer Portal,CVE-2023-42793,Medium,External,Critical,High
+AST-1017,Employee Workstation,CVE-2023-42793,High,Internal,Low,Medium
+AST-1018,Finance Server,CVE-2023-42793,Critical,Internal,Medium,Low
+AST-1019,HR Server,CVE-2023-42793,Low,Internal,High,High
+AST-1020,Legacy Windows Server,CVE-2023-42793,Medium,Internal,Critical,Medium
+AST-1021,Web Server,CVE-2023-4863,Critical,External,High,Low
+AST-1022,API Gateway,CVE-2023-4863,Low,External,Critical,High
+AST-1023,Email Server,CVE-2023-4863,Medium,External,Low,Medium
+AST-1024,VPN Gateway,CVE-2023-4863,High,External,Medium,Low
+AST-1025,Firewall,CVE-2023-4863,Critical,External,High,High
+AST-1026,Application Server,CVE-2023-4863,Low,Internal,Critical,Medium
+AST-1027,Database Server,CVE-2023-4863,Medium,Internal,Low,Low
+AST-1028,File Server,CVE-2023-4863,High,Internal,Medium,High
+AST-1029,Domain Controller,CVE-2023-4863,Critical,Internal,High,Medium
+AST-1030,Remote Access Server,CVE-2023-4863,Low,External,Critical,Low
+AST-1031,Virtualization Host,CVE-2023-4863,Medium,Internal,Low,High
+AST-1032,Backup Server,CVE-2023-4863,High,Internal,Medium,Medium
+AST-1033,Monitoring Server,CVE-2023-4863,Critical,Internal,High,Low
+AST-1034,Development Server,CVE-2023-4863,Low,Internal,Critical,High
+AST-1035,CI/CD Server,CVE-2023-4863,Medium,External,Low,Medium
+AST-1036,Customer Portal,CVE-2023-4863,High,External,Medium,Low
+AST-1037,Employee Workstation,CVE-2023-4863,Critical,Internal,High,High
+AST-1038,Finance Server,CVE-2023-4863,Low,Internal,Critical,Medium
+AST-1039,HR Server,CVE-2023-4863,Medium,Internal,Low,Low
+AST-1040,Legacy Windows Server,CVE-2023-4863,High,Internal,Medium,High
+AST-1041,Web Server,CVE-2023-27350,Low,External,Low,Medium
+AST-1042,API Gateway,CVE-2023-27350,Medium,External,Medium,Low
+AST-1043,Email Server,CVE-2023-27350,High,External,High,High
+AST-1044,VPN Gateway,CVE-2023-27350,Critical,External,Critical,Medium
+AST-1045,Firewall,CVE-2023-27350,Low,External,Low,Low
+AST-1046,Application Server,CVE-2023-27350,Medium,Internal,Medium,High
+AST-1047,Database Server,CVE-2023-27350,High,Internal,High,Medium
+AST-1048,File Server,CVE-2023-27350,Critical,Internal,Critical,Low
+AST-1049,Domain Controller,CVE-2023-27350,Low,Internal,Low,High
+AST-1050,Remote Access Server,CVE-2023-27350,Medium,External,Medium,Medium
+AST-1051,Virtualization Host,CVE-2023-27350,High,Internal,High,Low
+AST-1052,Backup Server,CVE-2023-27350,Critical,Internal,Critical,High
+AST-1053,Monitoring Server,CVE-2023-27350,Low,Internal,Low,Medium
+AST-1054,Development Server,CVE-2023-27350,Medium,Internal,Medium,Low
+AST-1055,CI/CD Server,CVE-2023-27350,High,External,High,High
+AST-1056,Customer Portal,CVE-2023-27350,Critical,External,Critical,Medium
+AST-1057,Employee Workstation,CVE-2023-27350,Low,Internal,Low,Low
+AST-1058,Finance Server,CVE-2023-27350,Medium,Internal,Medium,High
+AST-1059,HR Server,CVE-2023-27350,High,Internal,High,Medium
+AST-1060,Legacy Windows Server,CVE-2023-27350,Critical,Internal,Critical,Low
+AST-1061,Web Server,CVE-2022-36537,Medium,External,High,High
+AST-1062,API Gateway,CVE-2022-36537,High,External,Critical,Medium
+AST-1063,Email Server,CVE-2022-36537,Critical,External,Low,Low
+AST-1064,VPN Gateway,CVE-2022-36537,Low,External,Medium,High
+AST-1065,Firewall,CVE-2022-36537,Medium,External,High,Medium
+AST-1066,Application Server,CVE-2022-36537,High,Internal,Critical,Low
+AST-1067,Database Server,CVE-2022-36537,Critical,Internal,Low,High
+AST-1068,File Server,CVE-2022-36537,Low,Internal,Medium,Medium
+AST-1069,Domain Controller,CVE-2022-36537,Medium,Internal,High,Low
+AST-1070,Remote Access Server,CVE-2022-36537,High,External,Critical,High
+AST-1071,Virtualization Host,CVE-2022-36537,Critical,Internal,Low,Medium
+AST-1072,Backup Server,CVE-2022-36537,Low,Internal,Medium,Low
+AST-1073,Monitoring Server,CVE-2022-36537,Medium,Internal,High,High
+AST-1074,Development Server,CVE-2022-36537,High,Internal,Critical,Medium
+AST-1075,CI/CD Server,CVE-2022-36537,Critical,External,Low,Low
+AST-1076,Customer Portal,CVE-2022-36537,Low,External,Medium,High
+AST-1077,Employee Workstation,CVE-2022-36537,Medium,Internal,High,Medium
+AST-1078,Finance Server,CVE-2022-36537,High,Internal,Critical,Low
+AST-1079,HR Server,CVE-2022-36537,Critical,Internal,Low,High
+AST-1080,Legacy Windows Server,CVE-2022-36537,Low,Internal,Medium,Medium
+AST-1081,Web Server,CVE-2022-42475,High,External,Low,Low
+AST-1082,API Gateway,CVE-2022-42475,Critical,External,Medium,High
+AST-1083,Email Server,CVE-2022-42475,Low,External,High,Medium
+AST-1084,VPN Gateway,CVE-2022-42475,Medium,External,Critical,Low
+AST-1085,Firewall,CVE-2022-42475,High,External,Low,High
+AST-1086,Application Server,CVE-2022-42475,Critical,Internal,Medium,Medium
+AST-1087,Database Server,CVE-2022-42475,Low,Internal,High,Low
+AST-1088,File Server,CVE-2022-42475,Medium,Internal,Critical,High
+AST-1089,Domain Controller,CVE-2022-42475,High,Internal,Low,Medium
+AST-1090,Remote Access Server,CVE-2022-42475,Critical,External,Medium,Low
+AST-1091,Virtualization Host,CVE-2022-42475,Low,Internal,High,High
+AST-1092,Backup Server,CVE-2022-42475,Medium,Internal,Critical,Medium
+AST-1093,Monitoring Server,CVE-2022-42475,High,Internal,Low,Low
+AST-1094,Development Server,CVE-2022-42475,Critical,Internal,Medium,High
+AST-1095,CI/CD Server,CVE-2022-42475,Low,External,High,Medium
+AST-1096,Customer Portal,CVE-2022-42475,Medium,External,Critical,Low
+AST-1097,Employee Workstation,CVE-2022-42475,High,Internal,Low,High
+AST-1098,Finance Server,CVE-2022-42475,Critical,Internal,Medium,Medium
+AST-1099,HR Server,CVE-2022-42475,Low,Internal,High,Low
+AST-1100,Legacy Windows Server,CVE-2022-42475,Medium,Internal,Critical,High
+AST-1101,Web Server,CVE-2022-40684,Critical,External,High,Medium
+AST-1102,API Gateway,CVE-2022-40684,Low,External,Critical,Low
+AST-1103,Email Server,CVE-2022-40684,Medium,External,Low,High
+AST-1104,VPN Gateway,CVE-2022-40684,High,External,Medium,Medium
+AST-1105,Firewall,CVE-2022-40684,Critical,External,High,Low
+AST-1106,Application Server,CVE-2022-40684,Low,Internal,Critical,High
+AST-1107,Database Server,CVE-2022-40684,Medium,Internal,Low,Medium
+AST-1108,File Server,CVE-2022-40684,High,Internal,Medium,Low
+AST-1109,Domain Controller,CVE-2022-40684,Critical,Internal,High,High
+AST-1110,Remote Access Server,CVE-2022-40684,Low,External,Critical,Medium
+AST-1111,Virtualization Host,CVE-2022-40684,Medium,Internal,Low,Low
+AST-1112,Backup Server,CVE-2022-40684,High,Internal,Medium,High
+AST-1113,Monitoring Server,CVE-2022-40684,Critical,Internal,High,Medium
+AST-1114,Development Server,CVE-2022-40684,Low,Internal,Critical,Low
+AST-1115,CI/CD Server,CVE-2022-40684,Medium,External,Low,High
+AST-1116,Customer Portal,CVE-2022-40684,High,External,Medium,Medium
+AST-1117,Employee Workstation,CVE-2022-40684,Critical,Internal,High,Low
+AST-1118,Finance Server,CVE-2022-40684,Low,Internal,Critical,High
+AST-1119,HR Server,CVE-2022-40684,Medium,Internal,Low,Medium
+AST-1120,Legacy Windows Server,CVE-2022-40684,High,Internal,Medium,Low
+AST-1121,Web Server,CVE-2022-36804,Low,External,Low,High
+AST-1122,API Gateway,CVE-2022-36804,Medium,External,Medium,Medium
+AST-1123,Email Server,CVE-2022-36804,High,External,High,Low
+AST-1124,VPN Gateway,CVE-2022-36804,Critical,External,Critical,High
+AST-1125,Firewall,CVE-2022-36804,Low,External,Low,Medium
+AST-1126,Application Server,CVE-2022-36804,Medium,Internal,Medium,Low
+AST-1127,Database Server,CVE-2022-36804,High,Internal,High,High
+AST-1128,File Server,CVE-2022-36804,Critical,Internal,Critical,Medium
+AST-1129,Domain Controller,CVE-2022-36804,Low,Internal,Low,Low
+AST-1130,Remote Access Server,CVE-2022-36804,Medium,External,Medium,High
+AST-1131,Virtualization Host,CVE-2022-36804,High,Internal,High,Medium
+AST-1132,Backup Server,CVE-2022-36804,Critical,Internal,Critical,Low
+AST-1133,Monitoring Server,CVE-2022-36804,Low,Internal,Low,High
+AST-1134,Development Server,CVE-2022-36804,Medium,Internal,Medium,Medium
+AST-1135,CI/CD Server,CVE-2022-36804,High,External,High,Low
+AST-1136,Customer Portal,CVE-2022-36804,Critical,External,Critical,High
+AST-1137,Employee Workstation,CVE-2022-36804,Low,Internal,Low,Medium
+AST-1138,Finance Server,CVE-2022-36804,Medium,Internal,Medium,Low
+AST-1139,HR Server,CVE-2022-36804,High,Internal,High,High
+AST-1140,Legacy Windows Server,CVE-2022-36804,Critical,Internal,Critical,Medium
+AST-1141,Web Server,CVE-2021-21985,Medium,External,High,Low
+AST-1142,API Gateway,CVE-2021-21985,High,External,Critical,High
+AST-1143,Email Server,CVE-2021-21985,Critical,External,Low,Medium
+AST-1144,VPN Gateway,CVE-2021-21985,Low,External,Medium,Low
+AST-1145,Firewall,CVE-2021-21985,Medium,External,High,High
+AST-1146,Application Server,CVE-2021-21985,High,Internal,Critical,Medium
+AST-1147,Database Server,CVE-2021-21985,Critical,Internal,Low,Low
+AST-1148,File Server,CVE-2021-21985,Low,Internal,Medium,High
+AST-1149,Domain Controller,CVE-2021-21985,Medium,Internal,High,Medium
+AST-1150,Remote Access Server,CVE-2021-21985,High,External,Critical,Low
+AST-1151,Virtualization Host,CVE-2021-21985,Critical,Internal,Low,High
+AST-1152,Backup Server,CVE-2021-21985,Low,Internal,Medium,Medium
+AST-1153,Monitoring Server,CVE-2021-21985,Medium,Internal,High,Low
+AST-1154,Development Server,CVE-2021-21985,High,Internal,Critical,High
+AST-1155,CI/CD Server,CVE-2021-21985,Critical,External,Low,Medium
+AST-1156,Customer Portal,CVE-2021-21985,Low,External,Medium,Low
+AST-1157,Employee Workstation,CVE-2021-21985,Medium,Internal,High,High
+AST-1158,Finance Server,CVE-2021-21985,High,Internal,Critical,Medium
+AST-1159,HR Server,CVE-2021-21985,Critical,Internal,Low,Low
+AST-1160,Legacy Windows Server,CVE-2021-21985,Low,Internal,Medium,High

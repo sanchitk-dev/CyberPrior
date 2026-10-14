@@ -1,1 +1,8 @@
- 
+pandas
+requests
+numpy
+scikit-learn
+matplotlib
+seaborn
+openpyxl
+Flask>=3.0,<4.0

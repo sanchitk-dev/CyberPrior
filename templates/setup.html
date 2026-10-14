@@ -1,0 +1,6 @@
+{% extends "auth_base.html" %}
+{% block title %}Create your local account{% endblock %}
+{% block auth_content %}
+<div class="eyebrow">FIRST-TIME SETUP</div><h2>Create your workspace account</h2><p class="auth-intro">This account is stored only on this computer. There is no public registration or external account service.</p>
+<form method="post" class="auth-form"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Username<input name="username" autocomplete="username" required minlength="3" maxlength="32" placeholder="e.g. sanchit"></label><label>Password<input type="password" name="password" autocomplete="new-password" required minlength="12" placeholder="At least 12 characters"></label><p class="form-help">Choose a password you can keep safe. This prototype does not provide email-based password recovery.</p><button class="button button-primary auth-submit" type="submit">Create account <span aria-hidden="true">→</span></button></form>
+{% endblock %}
