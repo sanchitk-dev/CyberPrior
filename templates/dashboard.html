@@ -4,40 +4,40 @@
 {% block content %}
 <section class="page-content dashboard-content">
   <div class="page-heading">
-    <div><div class="eyebrow">OBJECTIVES 1 + 2</div><h1>Risk overview</h1><p>Threat intelligence enriched with project asset context.</p></div>
+    <div><div class="eyebrow">PROJECT OVERVIEW</div><h1>Risk overview</h1><p>Vulnerability intelligence meets asset context.</p></div>
     <a class="button button-primary" href="{{ url_for('prioritizer') }}">Open prioritizer <span aria-hidden="true">→</span></a>
   </div>
 
   <section class="metric-grid" aria-label="Project summary">
-    <article class="metric-card"><div class="metric-label">Asset-vulnerability records <span class="metric-icon">▤</span></div><div class="metric-value">{{ "{:,}".format(stats.records) }}</div><div class="metric-context">Finalized Objective 2 dataset</div></article>
-    <article class="metric-card"><div class="metric-label">Unique CVEs <span class="metric-icon">⌕</span></div><div class="metric-value">{{ stats.cves }}</div><div class="metric-context">Enriched vulnerability IDs</div></article>
-    <article class="metric-card"><div class="metric-label">Unique asset types <span class="metric-icon">◇</span></div><div class="metric-value">{{ "{:,}".format(stats.asset_types) }}</div><div class="metric-context">Synthetic project categories</div></article>
-    <article class="metric-card"><div class="metric-label">KEV-linked records <span class="metric-icon">◈</span></div><div class="metric-value">{{ "{:,}".format(stats.kev) }}</div><div class="metric-context">Records linked to known-exploited CVEs</div></article>
+    <article class="metric-card"><div class="metric-label">Asset-vulnerability records <span class="metric-icon">▤</span></div><div class="metric-value">{{ "{:,}".format(stats.records) }}</div><div class="metric-context">Records analyzed</div></article>
+    <article class="metric-card"><div class="metric-label">Unique CVEs <span class="metric-icon">⌕</span></div><div class="metric-value">{{ stats.cves }}</div><div class="metric-context">Vulnerabilities enriched</div></article>
+    <article class="metric-card"><div class="metric-label">Unique asset types <span class="metric-icon">◇</span></div><div class="metric-value">{{ "{:,}".format(stats.asset_types) }}</div><div class="metric-context">Sample asset categories</div></article>
+    <article class="metric-card"><div class="metric-label">KEV-linked records <span class="metric-icon">◈</span></div><div class="metric-value">{{ "{:,}".format(stats.kev) }}</div><div class="metric-context">Linked to known exploitation</div></article>
   </section>
 
-  <section class="dashboard-walkthrough" aria-label="Suggested project walkthrough"><div class="walkthrough-intro"><div class="eyebrow">NEW TO CYBERPRIOR?</div><h2>Take a quick three-step tour</h2><p>See how vulnerability information becomes a suggested fix order.</p></div><a class="walkthrough-step" href="{{ url_for('threat_intelligence') }}"><span>01</span><strong>Look up a vulnerability</strong><small>See its severity and exploitation information →</small></a><a class="walkthrough-step" href="#context-comparison"><span>02</span><strong>Compare asset situations</strong><small>See why the same weakness can carry different risk →</small></a><a class="walkthrough-step" href="{{ url_for('prioritizer') }}"><span>03</span><strong>Review what to address first</strong><small>Open the ranked list and recommended actions →</small></a></section>
+  <nav class="dashboard-walkthrough" aria-label="Explore CyberPrior"><div class="walkthrough-intro"><strong>Quick tour</strong><span>Explore in three steps</span></div><a class="walkthrough-step" href="{{ url_for('threat_intelligence') }}"><span>01</span><div><strong>Vulnerability data</strong><small>Severity and exploitation</small></div><i aria-hidden="true">→</i></a><a class="walkthrough-step" href="#context-comparison"><span>02</span><div><strong>Asset context</strong><small>See how context shifts risk</small></div><i aria-hidden="true">→</i></a><a class="walkthrough-step" href="{{ url_for('prioritizer') }}"><span>03</span><div><strong>Resolve order</strong><small>Review ranked actions</small></div><i aria-hidden="true">↗</i></a></nav>
 
   <section class="panel priority-panel dashboard-priority-panel">
-    <div class="section-heading"><div><div class="eyebrow">RISK LEVEL EXAMPLES</div><h2>See how priorities differ</h2><p>One representative record from each available risk level, ordered by priority score.</p></div><a class="button button-quiet" href="{{ url_for('prioritizer') }}">Explore all {{ "{:,}".format(total) }} records <span aria-hidden="true">→</span></a></div>
+    <div class="section-heading"><div><div class="eyebrow">RISK LEVEL EXAMPLES</div><h2>Compare example records</h2><p>One example per risk level, ordered by resolve rank.</p></div><a class="button button-quiet" href="{{ url_for('prioritizer') }}">Browse all {{ "{:,}".format(total) }} <span aria-hidden="true">→</span></a></div>
     <div class="attention-strip" aria-label="Record counts by residual risk level"><span class="attention-label">Records by residual risk level</span><span class="attention-count risk-critical">{{ stats.critical }} Critical</span><span class="attention-divider">·</span><span class="attention-count risk-high">{{ stats.high }} High</span><span class="attention-divider">·</span><span class="attention-count risk-moderate">{{ stats.moderate }} Moderate</span><span class="attention-divider">·</span><span class="attention-count risk-low">{{ stats.low }} Low</span></div>
+    <div class="example-filter-bar" role="toolbar" aria-label="Filter sample records by risk level"><span>Show examples:</span><button type="button" class="example-filter active" data-risk-filter="all" aria-pressed="true">All levels</button><button type="button" class="example-filter" data-risk-filter="critical" aria-pressed="false">Critical</button><button type="button" class="example-filter" data-risk-filter="high" aria-pressed="false">High</button><button type="button" class="example-filter" data-risk-filter="moderate" aria-pressed="false">Moderate</button><button type="button" class="example-filter" data-risk-filter="low" aria-pressed="false">Low</button><span class="example-filter-status" id="example-filter-status" aria-live="polite">Showing all examples</span></div>
     <div class="table-scroll-hint">On a narrow screen, scroll this table horizontally to see risk scores and actions →</div>
     <div class="table-scroll"><table class="data-table priority-table"><thead><tr><th>Rank</th><th>CVE</th><th>Asset scenario</th><th>Residual risk</th><th>Priority score</th><th>Recommended action</th></tr></thead><tbody>
       {% for row in top_rows %}
-      <tr class="clickable-row" data-href="{{ url_for('vulnerability_detail', asset_id=row.asset_id) }}">
+      <tr class="clickable-row" data-risk-level="{{ row.residual_risk_level|lower }}" data-href="{{ url_for('vulnerability_detail', asset_id=row.asset_id) }}">
         <td class="rank-cell">#{{ row.priority_rank|int }}</td><td><a class="cve-link" href="{{ url_for('vulnerability_detail', asset_id=row.asset_id) }}">{{ row.cve_id }}</a></td><td>{{ row.asset }} <small class="scenario-id">{{ row.asset_id }}</small></td>
         <td><span class="risk-badge {{ row.residual_risk_level|lower }}">{{ row.residual_risk_level }} · {{ "%.2f"|format(row.residual_risk_score|float) }}</span></td><td class="score-cell">{{ "%.2f"|format(row.priority_score|float) }}</td><td class="action-cell" title="{{ row.recommended_action }}">{{ row.recommended_action }}</td>
       </tr>
       {% endfor %}
     </tbody></table></div>
-    <div class="queue-footer"><span>Examples are selected across risk levels; the full prioritizer stays sorted by finalized priority rank.</span><a class="text-link" href="{{ url_for('prioritizer') }}">Search and filter all {{ "{:,}".format(total) }} records →</a></div>
-    <div class="risk-priority-key"><strong>How to read this:</strong> Risk level describes how serious the situation is. Resolve rank suggests the action order—<b>#1 is first</b>. The priority score combines risk with urgency signals such as exploitation likelihood and internet access.</div>
+    <div class="queue-footer"><span>#1 is first to resolve · Risk shows severity · Score helps order work</span><a class="text-link" href="{{ url_for('prioritizer') }}">Open full queue →</a></div>
   </section>
 
   <section class="dashboard-section">
-    <div class="section-heading"><div><div class="eyebrow">RISK LANDSCAPE</div><h2>Where risk and exposure sit</h2><p>Residual risk after controls, alongside the asset context represented in the dataset.</p></div></div>
+    <div class="section-heading"><div><div class="eyebrow">RISK LANDSCAPE</div><h2>Risk and exposure at a glance</h2></div></div>
   <section class="dashboard-grid">
     <article class="panel risk-panel">
-      <div class="panel-heading"><div><h2>Residual risk distribution</h2><p>After applying control effectiveness · select a tier to filter</p></div><a class="text-link landscape-link" href="{{ url_for('prioritizer') }}">View records →</a></div>
+      <div class="panel-heading"><div><h2>Residual risk</h2><p>Counts by risk level · click a level to filter</p></div><a class="text-link" href="{{ url_for('prioritizer') }}">Open risk queue →</a></div>
       <div class="risk-visual">
         <div class="risk-donut" style="background:conic-gradient({{ risk_gradient }})" role="img" aria-label="Critical {{ stats.critical }}, High {{ stats.high }}, Moderate {{ stats.moderate }}, Low {{ stats.low }}">
           <div class="donut-hole"><strong>{{ "{:,}".format(total) }}</strong><small>records</small></div>
@@ -48,11 +48,10 @@
           {% endfor %}
         </div>
       </div>
-      <div class="threshold-note">Risk tiers: Low &lt; 25 · Moderate 25–&lt;50 · High 50–&lt;70 · Critical ≥70</div>
     </article>
 
     <article class="panel distribution-panel">
-      <div class="panel-heading"><div><h2>Network exposure</h2><p>Scenario distribution by reachability · select a category to filter</p></div><a class="text-link landscape-link" href="{{ url_for('prioritizer') }}">View records →</a></div>
+      <div class="panel-heading"><div><h2>Network exposure</h2><p>Records by access · click a category to filter</p></div><a class="text-link" href="{{ url_for('prioritizer') }}">View affected records →</a></div>
       {% set external = exposure_counts.get('External', 0) %}{% set internal = exposure_counts.get('Internal', 0) %}
       {% set exposure_total = external + internal %}
       <div class="stacked-track" role="img" aria-label="External {{ external }}, Internal {{ internal }}"><span class="external-fill" style="width:{{ (external / exposure_total * 100) if exposure_total else 0 }}%"></span><span class="internal-fill" style="width:{{ (internal / exposure_total * 100) if exposure_total else 0 }}%"></span></div>
@@ -68,10 +67,11 @@
     </article>
   </section>
   </section>
+  <div class="risk-priority-key"><strong>How to read:</strong> Residual risk shows severity after safeguards. Resolve rank sets the suggested fix order (#1 first).</div>
 
   <section class="panel context-comparison-panel" id="context-comparison">
-    <div class="section-heading"><div><div class="eyebrow">ONE WEAKNESS · DIFFERENT ASSETS</div><h2>Why does the same vulnerability get different risk levels?</h2>
-      {% if comparison %}<p>Both examples involve {{ comparison.cve_id }}. The software weakness is the same; the affected asset and its protections are different.</p>{% else %}<p>CyberPrior considers the affected asset and its protections when estimating risk.</p>{% endif %}
+    <div class="section-heading"><div><div class="eyebrow">ONE VULNERABILITY · DIFFERENT ASSETS</div><h2>Why can the same vulnerability have different risk levels?</h2>
+      {% if comparison %}<p>{{ comparison.cve_id }} · Risk changes with asset context.</p>{% endif %}
     </div>{% if comparison %}<a class="text-link" href="{{ url_for('threat_intelligence', cve=comparison.cve_id) }}">About this vulnerability →</a>{% endif %}</div>
     {% if comparison %}<div class="context-comparison-grid">
       {% for item, heading in [(comparison.high, 'Higher-risk situation'), (comparison.low, 'Lower-risk situation')] %}
@@ -90,7 +90,6 @@
       </a>
       {% endfor %}
     </div>{% endif %}
-    <div class="comparison-explainer"><span class="info-mark">i</span><span>A CVE identifies a software weakness. By itself, it does not say how important an affected asset is. CyberPrior combines vulnerability information with asset importance, internet access, data sensitivity, and safeguards to estimate a risk level. Asset details shown here are sample project scenarios.</span></div>
   </section>
 </section>
 {% endblock %}

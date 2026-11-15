@@ -1,0 +1,12 @@
+{% extends "auth_base.html" %}
+{% block title %}Save your recovery code{% endblock %}
+{% block auth_content %}
+<div class="eyebrow">SAVE THIS CODE</div>
+<h2>{{ 'Account created' if created_account else 'Password changed' }}</h2>
+<p class="auth-intro">Keep this recovery code somewhere private and separate from your password. It is shown only once and is required to reset your password later.</p>
+<div class="recovery-code" role="group" aria-label="Your one-time recovery code"><code>{{ recovery_code }}</code></div>
+<p class="form-help recovery-warning">Anyone with this code can reset your local account password. Do not share it or store it beside your password.</p>
+{% if mail_status %}<p class="mail-status" role="status">{{ mail_status }}</p>{% endif %}
+<details class="send-code-details"><summary class="button button-quiet">Send recovery code by email</summary><form method="post" action="{{ url_for('send_recovery_code') }}" class="auth-form"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="recovery_code" value="{{ recovery_code }}"><input type="hidden" name="created_account" value="{{ 'true' if created_account else 'false' }}"><label>Email address<input type="email" name="email" value="{{ email or '' }}" autocomplete="email" required></label><p class="form-help">Email delivery requires the project owner to configure SMTP for this app. The code remains available above if mail is not configured.</p><button class="button button-quiet" type="submit">Send code</button></form></details>
+<a class="button button-primary auth-submit recovery-continue" href="{{ url_for('login') }}">Continue to sign in <span aria-hidden="true">→</span></a>
+{% endblock %}

@@ -75,7 +75,7 @@ Evaluation retains a stratified random 80/20 split (seed 42) as a baseline and a
 
 CVSS and EPSS fallback values are 5.0 and 0.0, respectively, only when external values are missing. The current enriched dataset has zero missing scores of either type; assessed outputs include flags to distinguish any future fallback from observed intelligence.
 
-Mitigation action rules use project-specific synthetic asset names and keyword matching in the `asset` field. They are not a general enterprise asset taxonomy. Risk assessed and prioritized CSV outputs retain asset/CVE IDs, risk scores and levels, intelligence values, and fallback flags for later history integration; Objective 3 monitoring is not implemented here.
+Mitigation action rules use project-specific synthetic asset names and keyword matching in the `asset` field. They are not a general enterprise asset taxonomy. Objective 3 provides manual snapshot checks, local risk history, and alerts when saved snapshots show notable changes. It does not monitor live systems or refresh external intelligence.
 
 ## Local Web Demonstration
 
@@ -83,9 +83,24 @@ The Flask prototype presents the completed Objective 1 and Objective 2 outputs. 
 
 ### Local account and user entries
 
-On first launch, open the site and create a local account when prompted. The account password is hashed before storage. Sign-in sessions use a random local secret key. The SQLite database and secret are stored under the ignored `instance/` directory and are not committed to the project repository. This prototype has no public registration, email password recovery, or cloud account synchronization. Back up the `instance/` directory if you want to preserve local entries; deleting it removes those entries and resets first-run setup.
+On first launch, open the site and create a local account when prompted. The sign-in page also provides a sign-up link for creating additional accounts on this local installation. Passwords are hashed before storage. Sign-in sessions use a random local secret key. The SQLite database and secret are stored under the ignored `instance/` directory and are not committed to the project repository. To reset a password, enter the email address saved on the account, then enter the emailed one-time code and a new password twice. Email recovery codes expire after 15 minutes and are invalidated after use. SMTP settings are required for email delivery. Existing accounts without an email address should sign in and set one in Account recovery before relying on self-service recovery. There is no cloud account synchronization. Back up the `instance/` directory if you want to preserve local accounts and entries; deleting it removes them.
 
-The **Saved scenarios** and **Save an asset scenario** pages let the signed-in user save an asset name, CVE identifier, and asset context. These rows are stored separately from the 1,160 finalized project records. They are shown as **Saved (not assessed)** and do not currently enter the existing risk scoring, prioritization, or ML evaluation pipeline. Users can edit or delete their saved scenarios. The site validates the CVE identifier format but does not verify that the CVE exists or calculate a result for these entries. The first version is a local single-user prototype, not a deployed multi-user service.
+The **Saved scenarios** and **Save an asset scenario** pages let a signed-in user save an asset name, CVE identifier, and asset context. These rows are stored separately from the 1,160 finalized project records. They are shown as **Saved (not assessed)** and do not currently enter the existing risk scoring, prioritization, or ML evaluation pipeline. Users can edit or delete their saved scenarios. The site validates the CVE identifier format but does not verify that the CVE exists or calculate a result for these entries. Accounts and data are local to this prototype; it is not a deployed multi-user service.
+
+### Recovery email configuration
+
+To enable recovery emails, configure an SMTP server that supports STARTTLS before launching Flask. Keep credentials private and do not commit them. For example, in PowerShell:
+
+```powershell
+$env:CYBERPRIOR_SMTP_HOST = "smtp.example.com"
+$env:CYBERPRIOR_SMTP_PORT = "587"
+$env:CYBERPRIOR_SMTP_USER = "your-sender@example.com"
+$env:CYBERPRIOR_SMTP_PASSWORD = "your-mail-provider-app-password"
+$env:CYBERPRIOR_SMTP_FROM = "your-sender@example.com"
+python app.py
+```
+
+`CYBERPRIOR_SMTP_FROM` can be omitted when it matches the SMTP username. The sign-up and Account recovery pages display a generated backup code; the Forgot password flow emails a short-lived code and reports when email delivery is unavailable. A recovery email can change the local password, so use a private mailbox and keep the SMTP credential out of source control.
 
 ### Start
 
@@ -101,6 +116,7 @@ Open [http://127.0.0.1:5000](http://127.0.0.1:5000). Flask is bound to localhost
 ### Pages and data
 
 * **Dashboard** – summary counts, risk mix, asset context, a short guided walkthrough, and the highest-priority records.
+* **Monitoring & alerts** – manually capture the current saved dataset, compare checks, review change alerts and risk history, and inspect the current high-priority queue. This is snapshot-based, not live monitoring.
 * **Vulnerability Prioritizer** – searchable, filterable, sortable, paginated resolve-first queue backed by the existing prioritized CSV. Rank #1 is listed first; risk level and risk score describe the record, while priority score determines queue order. Recommendations are project-generated examples and should be checked by a security professional before operational use.
 * **Vulnerability detail** – plain-language summary of saved NVD/EPSS/KEV information, synthetic asset context, rule-based risk estimate, resolve rank, and project-generated action guidance. Technical metadata and the optional model explanation are expandable. Recommendations are examples, not operational instructions.
 * **Threat Intelligence** – CVE-level view of the existing enriched NVD, FIRST EPSS, and CISA KEV fields.
@@ -109,7 +125,9 @@ Open [http://127.0.0.1:5000](http://127.0.0.1:5000). Flask is bound to localhost
 * **Saved scenarios / Save an asset scenario** – editable private local entries saved in SQLite, separate from the finalized evaluation dataset and not scored.
 * **Contact** – team lead contact details and project repository.
 
-The dashboard and vulnerability records use a finalized project snapshot rather than live monitoring. Source dates are shown in Threat Intelligence; refresh external data and regenerate outputs before presenting values as current. The prototype uses `data/processed/CyberPrior_Enriched_Dataset_v1.csv`, `CyberPrior_Risk_Assessed_Dataset_v1.csv`, and `CyberPrior_Prioritized_Dataset_v1.csv`; the saved `models/random_forest.joblib`; and `docs/objective2_ml_evaluation_report.md`. Charts are served from `docs/figures/`. No independent risk engine is implemented in the web layer. CVEs and threat intelligence are external project data; asset and organizational context values are synthetic project scenarios.
+The dashboard and vulnerability records use a finalized project snapshot rather than live monitoring. Objective 3 stores manual snapshot checks in the local SQLite database and compares records between checks; refresh external data and regenerate outputs before treating a new check as current intelligence. Source dates are shown in Threat Intelligence. The prototype uses `data/processed/CyberPrior_Enriched_Dataset_v1.csv`, `CyberPrior_Risk_Assessed_Dataset_v1.csv`, and `CyberPrior_Prioritized_Dataset_v1.csv`; the saved `models/random_forest.joblib`; and `docs/objective2_ml_evaluation_report.md`. Charts are served from `docs/figures/`. No independent risk engine is implemented in the web layer. CVEs and threat intelligence are external project data; asset and organizational context values are synthetic project scenarios.
+
+See [Objective 3 monitoring details](docs/objective3_monitoring.md) for the check workflow and alert thresholds.
 
 ### Mentor demo flow
 
@@ -118,8 +136,9 @@ The dashboard and vulnerability records use a finalized project snapshot rather 
 3. Open a row and compare external vulnerability information with the sample asset context, rule-based risk estimate, resolve rank, and suggested action. Open the advanced model explanation only if the audience asks.
 4. Open Threat Intelligence to distinguish CVSS severity, EPSS likelihood, and CISA KEV status.
 5. Open Model evaluation and compare the stratified random baseline with the no-CVE-overlap grouped holdout.
+6. Open Monitoring & alerts, record a baseline snapshot, then explain that later checks compare the current saved dataset with that baseline. Live system monitoring is not included.
 
-Objective 3 monitoring/history/alerts and Objective 4 budget-constrained mitigation remain intentionally paused. This local prototype is for demonstration, not a production security platform.
+Objective 3 has a manual snapshot-based monitoring prototype; live monitoring and automatic intelligence refresh remain future work. Objective 4 budget-constrained mitigation remains paused. This local prototype is for demonstration, not a production security platform.
 
 ---
 

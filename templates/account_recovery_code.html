@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Account recovery code{% endblock %}
+{% block breadcrumb %}Account recovery{% endblock %}
+{% block content %}
+<section class="page-content records-page">
+  <div class="page-heading"><div><div class="eyebrow">ACCOUNT SECURITY</div><h1>Recovery code</h1><p>Set or replace the one-time code used to reset this local account’s password.</p></div></div>
+  {% if recovery_code %}
+  <div class="panel recovery-panel"><h2>Save this code now</h2><p>This code is displayed once. Replacing it invalidates any older recovery code.</p><div class="recovery-code"><code>{{ recovery_code }}</code></div><p class="form-help recovery-warning">Keep it private and separate from your password.</p></div>
+  {% else %}
+  <div class="panel recovery-panel"><p>Anyone with the recovery code can reset this account’s password. Store it somewhere private and separate from your password. If you create a new code, the previous one stops working.</p><form method="post" class="auth-form"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Recovery email<input type="email" name="email" value="{{ email or '' }}" autocomplete="email" required></label><p class="form-help">This address is stored locally and used to email your recovery code.</p><button class="button button-primary" type="submit">Generate recovery code</button></form></div>
+  {% endif %}
+</section>
+{% endblock %}

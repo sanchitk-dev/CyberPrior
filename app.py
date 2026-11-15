@@ -1,16 +1,20 @@
-"""Local demonstration web app for CyberPrior Objectives 1 and 2."""
+"""Local demonstration web app for CyberPrior Objectives 1–3."""
 
 from __future__ import annotations
 
 import re
 import hmac
+import os
 import secrets
 import sqlite3
+import smtplib
+import ssl
+from email.message import EmailMessage
 from contextlib import contextmanager
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -74,6 +78,9 @@ def _initialize_local_store(app: Flask) -> None:
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT NOT NULL UNIQUE,
             password_hash TEXT NOT NULL,
+            recovery_hash TEXT,
+            recovery_expires_at TEXT,
+            email TEXT,
             created_at TEXT NOT NULL
           );
           CREATE TABLE IF NOT EXISTS submissions (
@@ -89,8 +96,89 @@ def _initialize_local_store(app: Flask) -> None:
             status TEXT NOT NULL DEFAULT 'Saved (not assessed)',
             created_at TEXT NOT NULL
           );
+          CREATE TABLE IF NOT EXISTS monitoring_checks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            checked_at TEXT NOT NULL,
+            source_snapshot TEXT NOT NULL,
+            record_count INTEGER NOT NULL,
+            critical_count INTEGER NOT NULL,
+            high_count INTEGER NOT NULL,
+            moderate_count INTEGER NOT NULL,
+            low_count INTEGER NOT NULL
+          );
+          CREATE TABLE IF NOT EXISTS monitoring_records (
+            check_id INTEGER NOT NULL REFERENCES monitoring_checks(id) ON DELETE CASCADE,
+            asset_id TEXT NOT NULL,
+            cve_id TEXT NOT NULL,
+            asset TEXT NOT NULL,
+            risk_level TEXT NOT NULL,
+            risk_score REAL NOT NULL,
+            priority_score REAL NOT NULL,
+            priority_rank INTEGER NOT NULL,
+            kev INTEGER NOT NULL,
+            recommended_action TEXT NOT NULL,
+            PRIMARY KEY (check_id, asset_id)
+          );
+          CREATE TABLE IF NOT EXISTS monitoring_alerts (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            check_id INTEGER NOT NULL REFERENCES monitoring_checks(id) ON DELETE CASCADE,
+            asset_id TEXT NOT NULL,
+            cve_id TEXT NOT NULL,
+            asset TEXT NOT NULL,
+            alert_type TEXT NOT NULL,
+            summary TEXT NOT NULL,
+            created_at TEXT NOT NULL
+          );
+          CREATE TABLE IF NOT EXISTS monitoring_alert_ack (
+            alert_id INTEGER NOT NULL REFERENCES monitoring_alerts(id) ON DELETE CASCADE,
+            user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+            acknowledged_at TEXT NOT NULL,
+            PRIMARY KEY (alert_id, user_id)
+          );
         """)
+        user_columns = {row["name"] for row in db.execute("PRAGMA table_info(users)").fetchall()}
+        if "recovery_hash" not in user_columns:
+            db.execute("ALTER TABLE users ADD COLUMN recovery_hash TEXT")
+        if "recovery_expires_at" not in user_columns:
+            db.execute("ALTER TABLE users ADD COLUMN recovery_expires_at TEXT")
+        if "email" not in user_columns:
+            db.execute("ALTER TABLE users ADD COLUMN email TEXT")
         db.execute("UPDATE submissions SET status = 'Saved (not assessed)' WHERE status = 'Pending assessment'")
+
+
+def _send_recovery_email(email_address: str, recovery_code: str, expires_minutes: int | None = None) -> None:
+    smtp_host = os.getenv("CYBERPRIOR_SMTP_HOST", "").strip()
+    smtp_user = os.getenv("CYBERPRIOR_SMTP_USER", "").strip()
+    smtp_password = os.getenv("CYBERPRIOR_SMTP_PASSWORD", "")
+    from_address = os.getenv("CYBERPRIOR_SMTP_FROM", smtp_user).strip()
+    if not smtp_host or not from_address:
+        raise RuntimeError("Email delivery is not configured. Check the recovery email settings or contact the project owner.")
+    try:
+        smtp_port = int(os.getenv("CYBERPRIOR_SMTP_PORT", "587"))
+    except ValueError as exc:
+        raise RuntimeError("Email delivery settings are invalid. Check the recovery email settings or contact the project owner.") from exc
+
+    message = EmailMessage()
+    message["Subject"] = "CyberPrior account recovery code"
+    message["From"] = from_address
+    message["To"] = email_address
+    expiry_note = f" This code expires in {expires_minutes} minutes." if expires_minutes else ""
+    message.set_content(
+        "Your CyberPrior account recovery code is:\n\n"
+        f"{recovery_code}\n\n"
+        f"Keep this code private. Anyone who has it can reset the password for your local CyberPrior account.{expiry_note} "
+        "If you did not request this code, you can ignore this message."
+    )
+    try:
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=15) as server:
+            server.ehlo()
+            server.starttls(context=ssl.create_default_context())
+            server.ehlo()
+            if smtp_user:
+                server.login(smtp_user, smtp_password)
+            server.send_message(message)
+    except (OSError, smtplib.SMTPException) as exc:
+        raise RuntimeError("The recovery email could not be sent. Try again or contact the project owner.") from exc
 
 
 def _is_safe_next(target: str | None) -> bool:
@@ -248,7 +336,7 @@ def create_app() -> Flask:
 
     @app.before_request
     def require_login_for_workspace():
-        if request.endpoint in {"setup", "login", "logout", "contact", "about", "static", "not_found", "unavailable"}:
+        if request.endpoint in {"setup", "login", "forgot_password", "send_password_recovery_code", "send_recovery_code", "logout", "contact", "about", "static", "not_found", "unavailable"}:
             return None
         if not session.get("user_id"):
             with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
@@ -268,23 +356,26 @@ def create_app() -> Flask:
     def setup() -> str:
         db_path = Path(app.instance_path) / "cyberprior.sqlite3"
         with _database(db_path) as db:
-            has_users = db.execute("SELECT 1 FROM users LIMIT 1").fetchone() is not None
-            if has_users:
-                return redirect(url_for("login"))
             if request.method == "POST":
                 username = request.form.get("username", "").strip()
+                email_address = request.form.get("email", "").strip()
                 password = request.form.get("password", "")
                 if not re.fullmatch(r"[A-Za-z0-9_.-]{3,32}", username):
                     flash("Choose a username with 3–32 letters, numbers, dots, dashes, or underscores.", "error")
+                elif not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email_address):
+                    flash("Enter a valid email address for recovery-code delivery.", "error")
                 elif len(password) < 12:
                     flash("Use a password with at least 12 characters.", "error")
                 else:
-                    db.execute(
-                        "INSERT INTO users (username, password_hash, created_at) VALUES (?, ?, ?)",
-                        (username, generate_password_hash(password), datetime.now(timezone.utc).isoformat()),
-                    )
-                    flash("Your local account is ready. Sign in to continue.", "success")
-                    return redirect(url_for("login"))
+                    recovery_code = secrets.token_urlsafe(24)
+                    try:
+                        db.execute(
+                            "INSERT INTO users (username, password_hash, recovery_hash, email, created_at) VALUES (?, ?, ?, ?, ?)",
+                            (username, generate_password_hash(password), generate_password_hash(recovery_code), email_address, datetime.now(timezone.utc).isoformat()),
+                        )
+                        return render_template("recovery_code.html", recovery_code=recovery_code, email=email_address, created_account=True, contact=CONTACT)
+                    except sqlite3.IntegrityError:
+                        flash("That username is already in use. Choose another one.", "error")
         return render_template("setup.html")
 
     @app.route("/login", methods=["GET", "POST"])
@@ -306,6 +397,121 @@ def create_app() -> Flask:
                     return redirect(destination if _is_safe_next(destination) else url_for("dashboard"))
                 flash("The username or password did not match.", "error")
         return render_template("login.html")
+
+    @app.route("/forgot-password", methods=["GET", "POST"])
+    def forgot_password() -> str:
+        if request.method == "GET" and request.args.get("restart") == "1":
+            session.pop("password_reset_email", None)
+            return redirect(url_for("forgot_password"))
+        email_address = session.get("password_reset_email", "")
+        step = "verify" if email_address else "email"
+        if request.method == "POST":
+            email_address = request.form.get("email", "").strip()
+            expected_email = session.get("password_reset_email", "")
+            recovery_code = request.form.get("recovery_code", "").strip()
+            new_password = request.form.get("new_password", "")
+            confirm_password = request.form.get("confirm_password", "")
+            if not expected_email or not hmac.compare_digest(email_address.lower(), expected_email.lower()):
+                flash("Start again with the email address for your account.", "error")
+                session.pop("password_reset_email", None)
+                return redirect(url_for("forgot_password"))
+            if len(new_password) < 12:
+                flash("Choose a new password with at least 12 characters.", "error")
+            elif new_password != confirm_password:
+                flash("The new passwords do not match.", "error")
+            else:
+                with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
+                    matches = db.execute(
+                        "SELECT id, recovery_hash, recovery_expires_at FROM users WHERE lower(email) = lower(?) ORDER BY id LIMIT 2",
+                        (email_address,),
+                    ).fetchall()
+                    user = matches[0] if len(matches) == 1 else None
+                    code_is_valid = bool(user and user["recovery_hash"] and check_password_hash(user["recovery_hash"], recovery_code))
+                    if code_is_valid and user["recovery_expires_at"]:
+                        try:
+                            expires_at = datetime.fromisoformat(user["recovery_expires_at"])
+                            code_is_valid = expires_at > datetime.now(timezone.utc)
+                        except ValueError:
+                            code_is_valid = False
+                    if code_is_valid:
+                        db.execute(
+                            "UPDATE users SET password_hash = ?, recovery_hash = NULL, recovery_expires_at = NULL WHERE id = ?",
+                            (generate_password_hash(new_password), user["id"]),
+                        )
+                        session.clear()
+                        flash("Your password has been changed. Sign in with your new password.", "success")
+                        return redirect(url_for("login"))
+                flash("That code could not be verified. Check it and try again, or request a new one.", "error")
+            step = "verify"
+        return render_template("forgot_password.html", contact=CONTACT, step=step, email=email_address)
+
+    @app.route("/send-password-recovery-code", methods=["POST"])
+    def send_password_recovery_code() -> str:
+        email_address = request.form.get("email", "").strip()
+        if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email_address):
+            flash("Enter a valid email address.", "error")
+            return redirect(url_for("forgot_password"))
+        email_address = email_address.lower()
+        with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
+            matches = db.execute(
+                "SELECT id FROM users WHERE lower(email) = lower(?) ORDER BY id LIMIT 2", (email_address,),
+            ).fetchall()
+        if len(matches) == 1:
+            recovery_code = secrets.token_urlsafe(24)
+            try:
+                _send_recovery_email(email_address, recovery_code, expires_minutes=15)
+            except RuntimeError as exc:
+                flash(str(exc), "error")
+                return redirect(url_for("forgot_password"))
+            else:
+                expires_at = (datetime.now(timezone.utc) + timedelta(minutes=15)).isoformat()
+                with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
+                    db.execute(
+                        "UPDATE users SET recovery_hash = ?, recovery_expires_at = ? WHERE id = ?",
+                        (generate_password_hash(recovery_code), expires_at, matches[0]["id"]),
+                    )
+        session["password_reset_email"] = email_address
+        flash("If this email belongs to an account, a recovery code has been sent. Check your inbox and spam folder.", "success")
+        return redirect(url_for("forgot_password"))
+
+    @app.route("/account/recovery-code", methods=["GET", "POST"])
+    def account_recovery_code() -> str:
+        recovery_code = None
+        email_address = ""
+        with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
+            user = db.execute("SELECT email FROM users WHERE id = ?", (session["user_id"],)).fetchone()
+            email_address = user["email"] or ""
+        if request.method == "POST":
+            email_address = request.form.get("email", "").strip()
+            if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email_address):
+                flash("Enter a valid email address so you can receive your recovery code.", "error")
+                return render_template("account_recovery_code.html", recovery_code=None, email=email_address)
+            recovery_code = secrets.token_urlsafe(24)
+            with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
+                db.execute(
+                    "UPDATE users SET recovery_hash = ?, recovery_expires_at = NULL, email = ? WHERE id = ?",
+                    (generate_password_hash(recovery_code), email_address, session["user_id"]),
+                )
+            return render_template("recovery_code.html", recovery_code=recovery_code, email=email_address, created_account=False, contact=CONTACT)
+        return render_template("account_recovery_code.html", recovery_code=recovery_code, email=email_address)
+
+    @app.route("/send-recovery-code", methods=["POST"])
+    def send_recovery_code() -> str:
+        recovery_code = request.form.get("recovery_code", "").strip()
+        email_address = request.form.get("email", "").strip()
+        created_account = request.form.get("created_account") == "true"
+        if not recovery_code or not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email_address):
+            mail_status = "Enter a valid email address to send this recovery code."
+        else:
+            try:
+                _send_recovery_email(email_address, recovery_code)
+                mail_status = f"Recovery code sent to {email_address}."
+            except RuntimeError as exc:
+                mail_status = str(exc)
+        return render_template(
+            "recovery_code.html", recovery_code=recovery_code, email=email_address,
+            created_account=created_account, contact=CONTACT, mail_status=mail_status,
+        )
 
     @app.route("/logout", methods=["POST"])
     def logout():
@@ -373,6 +579,119 @@ def create_app() -> Flask:
         flash("Scenario deleted.", "success")
         return redirect(url_for("records"))
 
+    @app.route("/monitoring", methods=["GET", "POST"])
+    def monitoring() -> str:
+        df, _ = require_data()
+        db_path = Path(app.instance_path) / "cyberprior.sqlite3"
+        if request.method == "POST":
+            checked_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            levels = {"Critical": 0, "High": 1, "Moderate": 2, "Low": 3}
+            current_by_asset: dict[str, dict[str, Any]] = {}
+            for record in df.to_dict("records"):
+                current_by_asset[str(record["asset_id"])] = record
+            with _database(db_path) as db:
+                previous_check = db.execute("SELECT id FROM monitoring_checks ORDER BY id DESC LIMIT 1").fetchone()
+                previous_by_asset: dict[str, sqlite3.Row] = {}
+                if previous_check:
+                    previous_by_asset = {
+                        row["asset_id"]: row for row in db.execute(
+                            "SELECT * FROM monitoring_records WHERE check_id = ?", (previous_check["id"],)
+                        ).fetchall()
+                    }
+                counts = df["residual_risk_level"].value_counts().to_dict()
+                source_snapshot = app.config["SOURCE_FRESHNESS"].get("snapshot", "Date unavailable")
+                cursor = db.execute(
+                    """INSERT INTO monitoring_checks
+                       (checked_at, source_snapshot, record_count, critical_count, high_count, moderate_count, low_count)
+                       VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                    (checked_at, source_snapshot, len(df), int(counts.get("Critical", 0)), int(counts.get("High", 0)),
+                     int(counts.get("Moderate", 0)), int(counts.get("Low", 0))),
+                )
+                check_id = cursor.lastrowid
+                inserts = []
+                alerts = []
+                for asset_id, record in current_by_asset.items():
+                    level = str(record.get("residual_risk_level", "Low"))
+                    risk_score = float(record.get("residual_risk_score", 0) or 0)
+                    priority_score = float(record.get("priority_score", 0) or 0)
+                    priority_rank = int(float(record.get("priority_rank", 0) or 0))
+                    kev = int(_as_bool(record.get("cisa_kev")))
+                    inserts.append((check_id, asset_id, str(record.get("cve_id", "")), str(record.get("asset", "")),
+                                    level, risk_score, priority_score, priority_rank, kev,
+                                    str(record.get("recommended_action", ""))))
+                    old = previous_by_asset.get(asset_id)
+                    if not old:
+                        continue
+                    old_level = str(old["risk_level"])
+                    old_kev = int(old["kev"])
+                    delta = risk_score - float(old["risk_score"])
+                    if kev and not old_kev:
+                        alerts.append((check_id, asset_id, str(record.get("cve_id", "")), str(record.get("asset", "")),
+                                       "kev", "Newly listed in the known-exploited catalog", checked_at))
+                    elif levels.get(level, 3) < levels.get(old_level, 3):
+                        alerts.append((check_id, asset_id, str(record.get("cve_id", "")), str(record.get("asset", "")),
+                                       "escalation", f"Risk level increased from {old_level} to {level}", checked_at))
+                    elif delta >= 10:
+                        alerts.append((check_id, asset_id, str(record.get("cve_id", "")), str(record.get("asset", "")),
+                                       "risk_increase", f"Residual risk increased by {delta:.1f} points", checked_at))
+                    elif priority_rank and old["priority_rank"] and int(old["priority_rank"]) - priority_rank >= 25:
+                        alerts.append((check_id, asset_id, str(record.get("cve_id", "")), str(record.get("asset", "")),
+                                       "priority_change", f"Resolve rank moved up from #{old['priority_rank']} to #{priority_rank}", checked_at))
+                db.executemany(
+                    """INSERT INTO monitoring_records
+                       (check_id, asset_id, cve_id, asset, risk_level, risk_score, priority_score, priority_rank, kev, recommended_action)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", inserts,
+                )
+                db.executemany(
+                    """INSERT INTO monitoring_alerts
+                       (check_id, asset_id, cve_id, asset, alert_type, summary, created_at)
+                       VALUES (?, ?, ?, ?, ?, ?, ?)""", alerts,
+                )
+            flash(
+                "Baseline snapshot recorded." if not previous_check else
+                f"Snapshot check complete · {len(alerts)} change alert{'s' if len(alerts) != 1 else ''} found.",
+                "success",
+            )
+            return redirect(url_for("monitoring"))
+
+        ranked = df.sort_values("priority_rank", kind="stable")
+        attention = ranked[ranked["residual_risk_level"].isin(["Critical", "High"])].head(10).to_dict("records")
+        risk_counts = df["residual_risk_level"].value_counts().to_dict()
+        with _database(db_path) as db:
+            checks = db.execute("SELECT * FROM monitoring_checks ORDER BY id DESC LIMIT 8").fetchall()
+            latest_check = checks[0] if checks else None
+            recent_alerts = []
+            alert_count = 0
+            if latest_check:
+                alert_count = db.execute(
+                    "SELECT COUNT(*) FROM monitoring_alerts WHERE check_id = ?", (latest_check["id"],)
+                ).fetchone()[0]
+                recent_alerts = db.execute(
+                    """SELECT a.*, ack.acknowledged_at FROM monitoring_alerts a
+                       LEFT JOIN monitoring_alert_ack ack ON ack.alert_id = a.id AND ack.user_id = ?
+                       ORDER BY a.id DESC LIMIT 12""",
+                    (session["user_id"],),
+                ).fetchall()
+            trends = list(reversed(checks))
+        return render_template(
+            "monitoring.html", checks=checks, trends=trends, latest_check=latest_check,
+            recent_alerts=recent_alerts, alert_count=alert_count, attention=attention,
+            risk_counts={level: int(risk_counts.get(level, 0)) for level in RISK_LEVELS}, total=len(df),
+        )
+
+    @app.route("/monitoring/alerts/<int:alert_id>/acknowledge", methods=["POST"])
+    def acknowledge_monitoring_alert(alert_id: int):
+        with _database(Path(app.instance_path) / "cyberprior.sqlite3") as db:
+            exists = db.execute("SELECT 1 FROM monitoring_alerts WHERE id = ?", (alert_id,)).fetchone()
+            if exists is None:
+                abort(404)
+            db.execute(
+                "INSERT OR IGNORE INTO monitoring_alert_ack (alert_id, user_id, acknowledged_at) VALUES (?, ?, ?)",
+                (alert_id, session["user_id"], datetime.now(timezone.utc).isoformat(timespec="seconds")),
+            )
+        flash("Alert acknowledged.", "success")
+        return redirect(url_for("monitoring"))
+
     @app.route("/")
     def dashboard() -> str:
         df, _ = require_data()
@@ -416,13 +735,6 @@ def create_app() -> Flask:
             level_rows = ranked_rows[ranked_rows["residual_risk_level"] == level]
             if not level_rows.empty:
                 representative_rows.append(level_rows.iloc[0])
-        selected_ids = {str(row["asset_id"]) for row in representative_rows}
-        for _, row in ranked_rows.iterrows():
-            if len(representative_rows) >= 5:
-                break
-            if str(row["asset_id"]) not in selected_ids:
-                representative_rows.append(row)
-                selected_ids.add(str(row["asset_id"]))
         top_rows = sorted(representative_rows, key=lambda row: row["priority_rank"])
         comparison = None
         if total and df["cve_id"].nunique() > 0:

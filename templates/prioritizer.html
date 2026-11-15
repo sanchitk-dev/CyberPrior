@@ -3,8 +3,8 @@
 {% block breadcrumb %}Vulnerability Prioritizer{% endblock %}
 {% block content %}
 <section class="page-content">
-  <div class="page-heading"><div><div class="eyebrow">PROJECT RISK QUEUE</div><h1>What should be fixed first?</h1><p>Find a vulnerability and open its record to see why it has this risk level and suggested rank.</p></div><span class="scope-pill">FINALIZED PROJECT DATA</span></div>
-  <div class="prioritizer-guide"><strong>Resolve rank:</strong> #1 is the first item to address. <strong>Risk level:</strong> how serious the situation is for this asset. Select a row for the detailed evidence and recommendation.</div>
+  <div class="page-heading"><div><div class="eyebrow">PROJECT RISK QUEUE</div><h1>What should be fixed first?</h1><p>Search by CVE or asset. Select a row for details.</p></div><span class="scope-pill">FINALIZED PROJECT DATA</span></div>
+  <div class="prioritizer-guide"><strong>#1 is first to address.</strong> Risk level shows severity; priority score helps order the queue.</div>
   <form class="filter-panel" method="get" action="{{ url_for('prioritizer') }}">
     <label class="filter-search"><span>Find a CVE or asset</span><input type="search" name="search" value="{{ search }}" placeholder="e.g. CVE-2024-3400 or VPN Gateway"></label>
     <label><span>Risk level</span><select name="risk"><option value="">All levels</option>{% for value in ['Critical','High','Moderate','Low'] %}<option value="{{ value }}" {{ 'selected' if risk == value else '' }}>{{ value }}</option>{% endfor %}</select></label>

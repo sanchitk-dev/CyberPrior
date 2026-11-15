@@ -1,6 +1,6 @@
 # CyberPrior Development Plan and Status
 
-**Status reviewed:** 11 October 2026
+**Status reviewed:** 16 November 2026
 
 This document tracks what is implemented in the repository and what remains future work. It replaces the original proposal-only sequence with the current project status.
 
@@ -13,7 +13,7 @@ This document tracks what is implemented in the repository and what remains futu
 | Risk prioritization and recommendations | Implemented for the synthetic project asset scenarios | `src/prioritization_engine.py` |
 | Local interactive demonstration | Implemented | `app.py`, `templates/`, `static/` |
 | Integration and final validation | In progress | Refresh data, regenerate outputs, confirm demo flow and prepare presentation |
-| Continuous monitoring, history, and alerts (Objective 3) | Paused / future scope | Not implemented |
+| Monitoring, history, and alerts (Objective 3) | Prototype implemented; manual checks against the saved dataset, not live monitoring | `app.py`, `templates/monitoring.html`, `docs/objective3_monitoring.md`, local SQLite snapshot and alert tables |
 | Budget-constrained security investment optimization (Objective 4) | Paused / future scope | Not implemented |
 
 ## Rebuild sequence

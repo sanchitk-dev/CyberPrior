@@ -29,4 +29,4 @@ Local Flask dashboard and detail views
 
 ## Scope and limitations
 
-The repository contains a local demonstration of Objectives 1 and 2: enrichment, risk assessment, model comparison, prioritization, explanations, and dashboard views. Continuous history and alerting (Objective 3) and budget-constrained investment optimization (Objective 4) are paused future work. The application is not a production security platform. Asset context and action matching are synthetic and project-specific.
+The repository contains a local demonstration of Objectives 1–3: enrichment, risk assessment, model comparison, prioritization, explanations, dashboard views, and manual snapshot monitoring. Objective 3 stores local history and raises change alerts by comparing checks against the saved dataset; it does not provide live monitoring. Budget-constrained investment optimization (Objective 4) remains future work. The application is not a production security platform. Asset context and action matching are synthetic and project-specific.

@@ -1,7 +1,7 @@
 # CyberPrior – Objective 2 Machine Learning Evaluation Report
 
 **Evaluation Task**: Multi-class Vulnerability Residual Risk Classification (`Low`, `Moderate`, `High`, `Critical`)  
-**Report generated**: 2026-10-11  
+**Report generated**: 2026-10-15  
 **Dataset**: `data/processed/CyberPrior_Risk_Assessed_Dataset_v1.csv` (1,160 records)  
 **Split Protocol**: Stratified 80% Train (928 records) / 20% Test (232 records), `random_state=42`  
 **Features Evaluated (7)**: `cvss_score`, `epss_score`, `cisa_kev`, `criticality`, `exposure`, `data_sensitivity`, `control_effectiveness`  
